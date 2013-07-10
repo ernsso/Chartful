@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="Chartful.Pages.Starting"
+             xmlns:model="clr-namespace:Chartful.Model"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="550">
+
+    <UserControl.Resources>
+        <Style x:Key="itemstyle" 
+               TargetType="{x:Type ListViewItem}"
+               BasedOn="{StaticResource {x:Type ListViewItem}}">
+            <EventSetter Event="MouseDoubleClick" Handler="HandleDoubleClick" />
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Style="{StaticResource ContentRoot}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Start" Style="{StaticResource Heading2}"/>
+
+            <Button Margin="0,10,0,0" 
+                    Content="New Document"
+                    Name="newBtn"
+                    Click="new_Click"/>
+            <Button Margin="0,10,0,0" 
+                    Content="Open Document"
+                    Name="openBtn"
+                    Click="open_Click"/>
+            <mui:BBCodeBlock Margin="0,10,0,0" 
+                             BBCode="[url=/Pages/LogIn.xaml]Online Document[/url]" 
+                             HorizontalAlignment="Center"/>            
+        </StackPanel>
+        
+        <StackPanel Grid.Column="2" Orientation="Vertical">
+            <TextBlock Text="Recent" Style="{StaticResource Heading2}"/>
+
+            <ListView ItemsSource="{Binding Path=Documents}"
+                      ItemContainerStyle="{StaticResource itemstyle}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
