@@ -130,6 +130,7 @@ namespace Chartful.Model
                     // écrire dans le fichier 
                     myXmlTextWriter.WriteStartElement("Object", null);
                         myXmlTextWriter.WriteAttributeString("Text", o.Text);
+                        myXmlTextWriter.WriteAttributeString("Type", o.UIType);
                         myXmlTextWriter.WriteAttributeString("FontSize", o.FontSize.ToString());
                         myXmlTextWriter.WriteAttributeString("Top", o.Top.ToString());
                         myXmlTextWriter.WriteAttributeString("Left", o.Left.ToString());                
@@ -155,6 +156,7 @@ namespace Chartful.Model
             {
                 XDocument doc = XDocument.Load(this.path);
                 string _text;
+                string _type;
                 string _fontsize;
                 string _top;
                 string _left;
@@ -162,17 +164,49 @@ namespace Chartful.Model
                 foreach (var obj in doc.Descendants("Object"))
                 {
                     _text = obj.Attribute("Text").Value;
+                    _type = obj.Attribute("Type").Value;
                     _fontsize = obj.Attribute("FontSize").Value;
                     _top = obj.Attribute("Top").Value;
                     _left = obj.Attribute("Left").Value;
 
-                    UIObject cxml = new UIObject(_text, _fontsize, _top, _left);
+                    UIObject cxml = new UIObject(_text,_type, _fontsize, _top, _left);
                     Content.Add(cxml);
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
+            }
+        }
+
+        public string ParseToHTML()
+        {
+            string html_content = "<html><header></header><body>";
+            html_content = html_content + "<div style=”Width:596px; Height : 896px; Margin:0; Padding:0; Background:#ffffff; border:solid #999999 1px;font-family:arial; font-size:12px; color:#333333””>";
+            try
+            {
+                foreach (UIObject o in Content)
+                {
+                    if (o.UIType == "Image")
+                    {
+                        html_content = html_content + "<IMG style=”position:absolute; Top:" + o.Top + "px; left:" + o.Left + "px;” src=”"+o.Text+"” />";
+                    }
+                    else
+                    {
+                        html_content = html_content + "<span style=”position:absolute; Top:"+o.Top+"px; left:"+o.Left+"px;”>"+o.Text+"</span>";
+
+                    }
+
+                }
+
+                html_content = html_content + "</div></body></html>";
+
+                return html_content;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return "";
             }
         }
     }
