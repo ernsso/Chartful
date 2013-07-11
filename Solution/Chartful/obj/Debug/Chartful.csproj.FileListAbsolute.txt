@@ -68,3 +68,5 @@ C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\Me
 C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Starting.baml
 C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Workspace.baml
 C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.g.resources
+C:\Users\Marine\Documents\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Marine\Documents\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
