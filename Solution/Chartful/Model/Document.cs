@@ -21,7 +21,8 @@ namespace Chartful.Model
         string path;
         string name;
         bool isSelected;
-        
+
+        public int Focused { get; set; }  
         public List<UIObject> Content { get; set; }
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Chartful.Model
         /// </summary>
         /// <param name="id">ObjectUI's ID</param>
         /// <returns>ObjectUI's index or -1 if not found</returns>
-        private int FindUIObject(string id)
+        public int FindUIObject(string id)
         {
             for (int i = 0; i < Content.Count; i++)
                 if (Content[i].ID == id) return i;
