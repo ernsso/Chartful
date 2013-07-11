@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Xml.Serialization;
+using System.Xml.Linq;
+using System.Xml;
 
 namespace Chartful.Model
 {
@@ -81,5 +84,64 @@ namespace Chartful.Model
             if (PropertyChanged == null) return;
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public void ParseToXML()
+        {
+            try
+            {
+                XmlTextWriter myXmlTextWriter = new XmlTextWriter(this.path, System.Text.Encoding.UTF8);
+                myXmlTextWriter.Formatting = Formatting.Indented;
+                myXmlTextWriter.WriteStartDocument(false);
+
+                myXmlTextWriter.WriteStartElement("Objects", null);
+                foreach (UIObject o in Content)
+                {
+                    // écrire dans le fichier 
+                    myXmlTextWriter.WriteStartElement("Object", null);
+                        myXmlTextWriter.WriteAttributeString("Text", o.Text);
+                        myXmlTextWriter.WriteAttributeString("FontSize", o.FontSize.ToString());
+                        myXmlTextWriter.WriteAttributeString("Top", o.Top.ToString());
+                        myXmlTextWriter.WriteAttributeString("Text", o.Left.ToString());                
+                    myXmlTextWriter.WriteEndElement();
+                }
+                myXmlTextWriter.WriteEndElement();
+                myXmlTextWriter.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+
+
+        }
+
+        public void ParseFromXML()
+        {
+            try
+            {
+                XDocument doc = XDocument.Load(this.path);
+                string _text;
+                string _fontsize;
+                string _top;
+                string _left;
+
+                foreach (var obj in doc.Descendants("Object"))
+                {
+                    _text = obj.Attribute("Text").Value;
+                    _fontsize = obj.Attribute("FontSize").Value;
+                    _top = obj.Attribute("Top").Value;
+                    _left = obj.Attribute("Left").Value;
+
+                    UIObject cxml = new UIObject(_text, _fontsize, _top, _left);
+                    Content.Add(cxml);
+                };
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
     }
+
 }
