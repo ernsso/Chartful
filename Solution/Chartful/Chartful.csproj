@@ -78,6 +78,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Controls\DragCanvas.cs" />
     <Compile Include="Controls\MenuList.xaml.cs">
       <DependentUpon>MenuList.xaml</DependentUpon>
     </Compile>
@@ -121,6 +122,7 @@
     </Page>
     <Compile Include="Model\Document.cs" />
     <Compile Include="Model\Manager.cs" />
+    <Compile Include="Model\UIObject.cs" />
     <Compile Include="Pages\Editor.xaml.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>

@@ -62,20 +62,25 @@
                     </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="2" BorderThickness="1" Width="596"  Height="842" BorderBrush="#333333" Background="White">
-                        <StackPanel Name="receiver"
+                        <Ctrl:DragCanvas x:Name="dragCanvas"
                                     Background="white"
                                     AllowDrop="True" 
-                                    Drop="receiver_Drop"/>
+                                    Drop="receiver_Drop"
+                                    MouseLeave="dragCanvas_MouseLeave">
+                        </Ctrl:DragCanvas>
                     </Border>
 
                     <WrapPanel Grid.Column="5">
                         <Label Name="data1"
-                               Content="Rapière" 
-                               Foreground="CornflowerBlue"
+                               Content="Title" 
+                               Foreground="#666666"
+                               FontSize="16"
                                MouseMove="pickData_MouseMove" />
                     </WrapPanel>
-                    
-                    <StackPanel Name="StatusContent" />
+
+                    <StackPanel Name="StatusContent" >
+                        <TextBlock Name="Position"/>
+                    </StackPanel>
                 </Grid>
             </StackPanel>
         </ScrollViewer>

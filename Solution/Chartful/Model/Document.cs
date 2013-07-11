@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Chartful.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace Chartful.Model
 {
@@ -14,11 +16,15 @@ namespace Chartful.Model
         string path;
         string name;
         bool isSelected;
+        
+        public List<UIObject> Content { get; set; }
 
-        public Document(string p)
+        public Document(string p = "New Document.ctf")
         {
             path = p;
             Name = path;
+
+            Content = new List<UIObject>();
         }
 
         public override string ToString()

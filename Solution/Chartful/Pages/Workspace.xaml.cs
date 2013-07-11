@@ -27,6 +27,7 @@ namespace Chartful.Pages
     {
         public ObservableCollection<Document> Documents { get; private set; }
         Document selected;
+        Point canvasCursorLocation;
 
         public Document Selected
         {
@@ -57,8 +58,46 @@ namespace Chartful.Pages
             Documents = wnd.DocManager.Documents;
             Selected = wnd.DocManager.Selected;
 
+            SetUIObject();
+
             DataContext = null;
             DataContext = this;
+        }
+
+        public void GetUIObject()
+        {
+            Selected.Content.Clear();
+
+            foreach (UIElement e in dragCanvas.Children)
+            {
+                UIObject o = new UIObject();
+
+                o.Text = ((TextBox)e).Text;
+                o.BorderThickness = ((TextBox)e).BorderThickness.Top;
+                o.FontSize = ((TextBox)e).FontSize;
+                o.Left = Canvas.GetLeft(e);
+                o.Top = Canvas.GetTop(e);
+
+                Selected.Content.Add(o);
+            }
+        }
+
+        public void SetUIObject()
+        {
+            dragCanvas.Children.Clear();
+
+            foreach (UIObject o in Selected.Content)
+            {
+                TextBox item = new TextBox { Text = "Your Title" };
+                item.BorderThickness = new Thickness(0);
+                item.FontSize = 36;
+                item.FontWeight = FontWeights.Bold;
+                item.Background = Brushes.Transparent;
+
+                dragCanvas.Children.Add(item);
+                Canvas.SetLeft(item, o.Left);
+                Canvas.SetTop(item, o.Top);
+            }
         }
         
         private void TextItemList_MouseClick(object sender, MouseButtonEventArgs e)
@@ -81,18 +120,41 @@ namespace Chartful.Pages
             }
         }
 
+        private void canvas_MouseMove(object sender, MouseEventArgs e)
+        {
+            canvasCursorLocation = e.GetPosition(this);
+        }
+
         private void receiver_Drop(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(string)))
             {
                 e.Effects = DragDropEffects.Copy;
-                string weapon = (string)e.Data.GetData(typeof(string));
-                this.receiver.Children.Add(new TextBlock { Text = weapon });
+                string typeName = (string)e.Data.GetData(typeof(string));
 
-                this.StatusContent.Children.Add(new TextBlock { Text = "Add : " + weapon });
+                if (typeName == "Title")
+                {
+                    Point relativePoint = dragCanvas.TransformToAncestor(this)
+                                  .Transform(new Point(0, 0));
+
+                    UIObject o = new UIObject();
+
+                    o.Left = e.GetPosition(this).X - relativePoint.X;
+                    o.Top = e.GetPosition(this).Y - relativePoint.Y;
+
+                    Selected.Content.Add(o);
+                }
+
+                this.StatusContent.Children.Add(new TextBlock { Text = "Add : " + typeName });
+                Refresh();
             }
             else
                 e.Effects = DragDropEffects.None;
+        }
+
+        private void dragCanvas_MouseLeave(object sender, MouseEventArgs e)
+        {
+            GetUIObject();
         }
     }
 }
