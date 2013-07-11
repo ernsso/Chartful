@@ -92,7 +92,7 @@ namespace Chartful.Pages
                 {
                     UIObject o = new UIObject();
 
-                    o.Text = ((TextBlock)e).Text;
+                    o.Content = ((TextBlock)e).Text;
                     o.FontSize = ((TextBlock)e).FontSize;
                     o.Left = Canvas.GetLeft(e);
                     o.Top = Canvas.GetTop(e);

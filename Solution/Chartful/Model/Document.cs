@@ -129,7 +129,7 @@ namespace Chartful.Model
                 {
                     // écrire dans le fichier 
                     myXmlTextWriter.WriteStartElement("Object", null);
-                        myXmlTextWriter.WriteAttributeString("Text", o.Text);
+                        myXmlTextWriter.WriteAttributeString("Text", o.Content);
                         myXmlTextWriter.WriteAttributeString("Type", o.UIType);
                         myXmlTextWriter.WriteAttributeString("FontSize", o.FontSize.ToString());
                         myXmlTextWriter.WriteAttributeString("Top", o.Top.ToString());
@@ -179,6 +179,10 @@ namespace Chartful.Model
             }
         }
 
+        /// <summary>
+        /// Parse every document's object into HTML
+        /// </summary>
+        /// <returns>HTML objects</returns>
         public string ParseToHTML()
         {
             string html_content = "<html><header></header><body>";
@@ -189,11 +193,11 @@ namespace Chartful.Model
                 {
                     if (o.UIType == "Image")
                     {
-                        html_content = html_content + "<IMG style=”position:absolute; Top:" + o.Top + "px; left:" + o.Left + "px;” src=”"+o.Text+"” />";
+                        html_content = html_content + "<IMG style=”position:absolute; Top:" + o.Top + "px; left:" + o.Left + "px;” src=”"+o.Content+"” />";
                     }
                     else
                     {
-                        html_content = html_content + "<span style=”position:absolute; Top:"+o.Top+"px; left:"+o.Left+"px;”>"+o.Text+"</span>";
+                        html_content = html_content + "<span style=”position:absolute; Top:"+o.Top+"px; left:"+o.Left+"px;”>"+o.Content+"</span>";
 
                     }
 
@@ -209,6 +213,37 @@ namespace Chartful.Model
                 return "";
             }
         }
-    }
 
+        /// <summary>
+        /// Update the object in the document
+        /// </summary>
+        /// <param name="o"></param>
+        public void UpdateUIObject(UIObject o)
+        {
+            int i = FindUIObject(o.ID);
+
+            if (-1 < i)
+            {
+                Content[i] = o;
+
+                //Rewrite the file
+                ParseToXML();
+
+                //Push to the document's difusion list
+                //Add function here
+            }
+        }
+
+        /// <summary>
+        /// Find an ObjetUI's position  
+        /// </summary>
+        /// <param name="id">ObjectUI's ID</param>
+        /// <returns>ObjectUI's index or -1 if not found</returns>
+        private int FindUIObject(string id)
+        {
+            for (int i = 0; i < Content.Count; i++)
+                if (Content[i].ID == id) return i;
+            return -1;
+        }
+    }
 }
