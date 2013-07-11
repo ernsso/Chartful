@@ -70,13 +70,17 @@
                         </Ctrl:DragCanvas>
                     </Border>
 
-                    <WrapPanel Grid.Column="5">
+                    <StackPanel Grid.Column="5" Name="controls">
                         <Label Name="data1"
-                               Content="Title" 
                                Foreground="#666666"
                                FontSize="16"
-                               MouseMove="pickData_MouseMove" />
-                    </WrapPanel>
+                               MouseMove="pickData_MouseMove" >
+                            <WrapPanel>
+                                <Ellipse Height="5" Width="5" Fill="DarkGray"/>
+                                <TextBlock Text="Title"/>
+                            </WrapPanel>
+                        </Label>
+                    </StackPanel>
 
                     <StackPanel Name="StatusContent" >
                         <TextBlock Name="Position"/>

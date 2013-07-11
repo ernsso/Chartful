@@ -9,7 +9,6 @@ namespace Chartful.Model
     public class UIObject
     {
         public string Text { get; set; }
-        public double BorderThickness { get; set; }
         public double FontSize { get; set; }
         public double Top { get; set; }
         public double Left { get; set; }

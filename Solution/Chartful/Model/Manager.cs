@@ -23,6 +23,7 @@ namespace Chartful.Model
                     d.IsSelected = true;
                 else
                     d.IsSelected = false;
+
         }
 
         public void SelectLastDocument()

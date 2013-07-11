@@ -2,9 +2,11 @@
 using Chartful.Model;
 using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows.Controls;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,9 +29,9 @@ namespace Chartful.Pages
     {
         public ObservableCollection<Document> Documents { get; private set; }
         Document selected;
-        Point canvasCursorLocation;
+        //Point canvasCursorLocation;
 
-        public Document Selected
+        public Document Selected 
         {
             get
             {
@@ -54,6 +56,9 @@ namespace Chartful.Pages
 
         public void Refresh()
         {
+            if (null != selected)
+                controls.IsEnabled = true;
+
             var wnd = Application.Current.MainWindow as MainWindow;
             Documents = wnd.DocManager.Documents;
             Selected = wnd.DocManager.Selected;
@@ -66,37 +71,41 @@ namespace Chartful.Pages
 
         public void GetUIObject()
         {
-            Selected.Content.Clear();
-
-            foreach (UIElement e in dragCanvas.Children)
+            if (null != Selected)
             {
-                UIObject o = new UIObject();
+                Selected.Content.Clear();
 
-                o.Text = ((TextBox)e).Text;
-                o.BorderThickness = ((TextBox)e).BorderThickness.Top;
-                o.FontSize = ((TextBox)e).FontSize;
-                o.Left = Canvas.GetLeft(e);
-                o.Top = Canvas.GetTop(e);
+                foreach (UIElement e in dragCanvas.Children)
+                {
+                    UIObject o = new UIObject();
 
-                Selected.Content.Add(o);
+                    o.Text = ((TextBlock)e).Text;
+                    o.FontSize = ((TextBlock)e).FontSize;
+                    o.Left = Canvas.GetLeft(e);
+                    o.Top = Canvas.GetTop(e);
+
+                    Selected.Content.Add(o);
+                }
             }
         }
 
         public void SetUIObject()
         {
-            dragCanvas.Children.Clear();
-
-            foreach (UIObject o in Selected.Content)
+            if (null != Selected)
             {
-                TextBox item = new TextBox { Text = "Your Title" };
-                item.BorderThickness = new Thickness(0);
-                item.FontSize = 36;
-                item.FontWeight = FontWeights.Bold;
-                item.Background = Brushes.Transparent;
+                dragCanvas.Children.Clear();
 
-                dragCanvas.Children.Add(item);
-                Canvas.SetLeft(item, o.Left);
-                Canvas.SetTop(item, o.Top);
+                foreach (UIObject o in Selected.Content)
+                {
+                    TextBlock item = new TextBlock { Text = "Your Title" };
+                    item.FontSize = 36;
+                    item.FontWeight = FontWeights.Bold;
+                    item.Background = Brushes.Transparent;
+
+                    dragCanvas.Children.Add(item);
+                    Canvas.SetLeft(item, o.Left);
+                    Canvas.SetTop(item, o.Top);
+                }
             }
         }
         
@@ -115,22 +124,28 @@ namespace Chartful.Pages
                 DragDropEffects effects;
                 DataObject obj = new DataObject();
                 Label source = (Label)sender;
-                obj.SetData(typeof(string), source.Content);
+                obj.SetData(typeof(WrapPanel), source.Content);
                 effects = DragDrop.DoDragDrop(source, obj, DragDropEffects.Copy | DragDropEffects.Move);
             }
         }
 
-        private void canvas_MouseMove(object sender, MouseEventArgs e)
-        {
-            canvasCursorLocation = e.GetPosition(this);
-        }
+        //private void canvas_MouseMove(object sender, MouseEventArgs e)
+        //{
+        //    canvasCursorLocation = e.GetPosition(this);
+        //}
 
         private void receiver_Drop(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(typeof(string)))
+            if (Selected == null)
+            {
+                ModernDialog.ShowMessage("before editing, you should create or open a document", "No document", MessageBoxButton.OK);
+                return;
+            }
+
+            if (e.Data.GetDataPresent(typeof(WrapPanel)))
             {
                 e.Effects = DragDropEffects.Copy;
-                string typeName = (string)e.Data.GetData(typeof(string));
+                string typeName = ((TextBlock)((WrapPanel)e.Data.GetData(typeof(WrapPanel))).Children[1]).Text;
 
                 if (typeName == "Title")
                 {
