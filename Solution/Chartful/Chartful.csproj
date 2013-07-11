@@ -126,7 +126,6 @@
     </Page>
     <Compile Include="Model\Document.cs" />
     <Compile Include="Model\Manager.cs" />
-    <Compile Include="Model\UIObject.cs" />
     <Compile Include="Pages\Editor.xaml.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
@@ -160,6 +159,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChartfulPeerBLL\BLL.csproj">
+      <Project>{b39ac127-1933-4736-bf1c-b367125cf7cb}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

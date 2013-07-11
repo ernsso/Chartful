@@ -72,3 +72,5 @@ C:\Users\Marine\Documents\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
 C:\Users\Marine\Documents\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
 C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.baml
 C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.pdb
