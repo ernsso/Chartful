@@ -216,5 +216,11 @@ namespace Chartful.Pages
         {
             ContentPropertyBox.Text = Selected.Content[Selected.Focused].Content;
         }
+
+        private void TextBlock_KeyDown(object sender, KeyEventArgs e)
+        {
+            Selected.Content[Selected.Focused].Content = ContentPropertyBox.Text;
+            Selected.UpdateUIObject(Selected.Content[Selected.Focused]);
+        }
     }
 }
