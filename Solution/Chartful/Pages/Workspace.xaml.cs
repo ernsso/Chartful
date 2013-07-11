@@ -68,6 +68,18 @@ namespace Chartful.Pages
         }
 
         /// <summary>
+        /// Change the selected document
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void TextItemList_MouseClick(object sender, MouseButtonEventArgs e)
+        {
+            var wnd = Application.Current.MainWindow as MainWindow;
+            wnd.DocManager.SelectDocument(((TextItemList)sender).TextItem);
+            Refresh();
+        }
+
+        /// <summary>
         /// Push in the document every UIElement's Canvas
         /// </summary>
         public void GetUIObject()
@@ -116,18 +128,6 @@ namespace Chartful.Pages
             }
         }
         
-        /// <summary>
-        /// Change the selected document
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void TextItemList_MouseClick(object sender, MouseButtonEventArgs e)
-        {
-            var wnd = Application.Current.MainWindow as MainWindow;
-            wnd.DocManager.SelectDocument(((TextItemList)sender).TextItem);
-            Refresh();
-        }
-
         /// <summary>
         /// Get the dragged Element
         /// </summary>
