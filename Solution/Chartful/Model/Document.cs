@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Xml.Serialization;
 using System.Xml.Linq;
 using System.Xml;
+using Chartful.BLL;
 
 namespace Chartful.Model
 {
