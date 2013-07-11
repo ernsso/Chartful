@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using System.Runtime.Serialization;
 
-namespace Chartful.BLL
+namespace Chartful.BLL.p2p
 {
     [ServiceContract(Namespace = "http://Chartful.Peer")]
-    public interface IChartful<T>
+    public interface IChartful
     {
         [OperationContract(IsOneWay = true)]
-        void sendData(T data);
+        void sendUIObject(UIObject data);
     }
 
-    public interface IChartfulChannel<T> : IChartful<T>, IClientChannel
+    public interface IChartfulChannel : IChartful, IClientChannel
     {
     }
 }

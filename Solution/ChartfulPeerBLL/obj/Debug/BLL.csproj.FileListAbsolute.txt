@@ -2,3 +2,9 @@ C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\ChartfulPeerBLL
 C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.pdb
 C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
 C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.dll.config
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache

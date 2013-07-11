@@ -5,33 +5,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 
-namespace Chartful.BLL
+namespace Chartful.BLL.p2p
 {
+    public delegate void UpdateDelegate(UIObject data);
+
     public class PeerChannel
     {
+        public static UpdateDelegate myUpdateDelegate;
         private ServiceHost serviceHost;
-        private ChannelFactory<IChartfulChannel<string>> factory;
-        private IChartfulChannel<string> broadcastChannel;
+        private ChannelFactory<IChartfulChannel> factory;
+        private IChartfulChannel broadcastChannel;
 
         public PeerChannel()
         {
-            serviceHost = new ServiceHost(typeof(PeerReceiver<string>));
-            // Open the ServiceHostBase to create listeners and start listening for messages.
-            serviceHost.Open();
+            try
+            {
+                serviceHost = new ServiceHost(typeof(PeerReceiver));
+                // Open the ServiceHostBase to create listeners and start listening for messages.
+                serviceHost.Open();
 
-            EndpointAddress lookFor = new EndpointAddress(serviceHost.BaseAddresses[0].ToString() + "tchat");
+                EndpointAddress lookFor = new EndpointAddress(serviceHost.BaseAddresses[0].ToString() + "tchat");
 
-            factory = new ChannelFactory<IChartfulChannel<string>>("BroadcastEndpoint", lookFor);
+                factory = new ChannelFactory<IChartfulChannel>("BroadcastEndpoint", lookFor);
 
-            broadcastChannel = factory.CreateChannel();
+                broadcastChannel = factory.CreateChannel();
 
-            //IOnlineStatus ostat = broadcastChannel.GetProperty<IOnlineStatus>();
-            //ostat.Online += new EventHandler(OnOnline);
-            //ostat.Offline += new EventHandler(OnOffline);
+                //IOnlineStatus ostat = broadcastChannel.GetProperty<IOnlineStatus>();
+                //ostat.Online += new EventHandler(OnOnline);
+                //ostat.Offline += new EventHandler(OnOffline);
 
-            broadcastChannel.Open();
-            string msg = "Wellcome ";
-            broadcastChannel.sendData(msg);
+                broadcastChannel.Open();
+            }
+            catch (Exception e)
+            {
+                string ex = e.Message;
+            }
         }
 
         ~PeerChannel()
@@ -41,9 +49,9 @@ namespace Chartful.BLL
             serviceHost.Close();
         }
 
-        public void Send(string data)
+        public void Send(UIObject data)
         {
-            broadcastChannel.sendData(data);
+            broadcastChannel.sendUIObject(data);
         }
 
 
