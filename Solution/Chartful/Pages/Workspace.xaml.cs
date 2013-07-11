@@ -52,8 +52,10 @@ namespace Chartful.Pages
         public void Refresh()
         {
             var wnd = Application.Current.MainWindow as MainWindow;
+
             // Get all opened documents
             Documents = wnd.DocManager.Documents;
+
             // Get selected document
             Selected = wnd.DocManager.Selected;
 
@@ -85,6 +87,9 @@ namespace Chartful.Pages
 
                     Selected.Content.Add(o);
                 }
+
+                // Write the modifications in the file
+                Selected.ParseToXML();
             }
         }
 

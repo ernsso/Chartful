@@ -109,6 +109,7 @@ namespace Chartful.Model
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged == null) return;
+
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
@@ -131,7 +132,7 @@ namespace Chartful.Model
                         myXmlTextWriter.WriteAttributeString("Text", o.Text);
                         myXmlTextWriter.WriteAttributeString("FontSize", o.FontSize.ToString());
                         myXmlTextWriter.WriteAttributeString("Top", o.Top.ToString());
-                        myXmlTextWriter.WriteAttributeString("Text", o.Left.ToString());                
+                        myXmlTextWriter.WriteAttributeString("Left", o.Left.ToString());                
                     myXmlTextWriter.WriteEndElement();
                 }
                 myXmlTextWriter.WriteEndElement();
@@ -168,12 +169,6 @@ namespace Chartful.Model
                     UIObject cxml = new UIObject(_text, _fontsize, _top, _left);
                     Content.Add(cxml);
                 }
-
-                foreach (UIObject ui in Content)
-                {
-                    Console.WriteLine(ui.Text);
-                }
-
             }
             catch (Exception e)
             {
