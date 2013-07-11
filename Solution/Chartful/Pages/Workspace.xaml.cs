@@ -28,20 +28,7 @@ namespace Chartful.Pages
     public partial class Workspace : UserControl
     {
         public ObservableCollection<Document> Documents { get; private set; }
-        Document selected;
-        //Point canvasCursorLocation;
-
-        public Document Selected 
-        {
-            get
-            {
-                return selected;
-            }
-            set
-            {
-                selected = value;
-            }
-        }
+        public Document Selected { get; set; }
 
         public Workspace()
         {
@@ -49,26 +36,38 @@ namespace Chartful.Pages
             DataContext = this;
         }
 
+        /// <summary>
+        /// Called when the page is loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             Refresh();
         }
 
+        /// <summary>
+        /// Refresh the editor
+        /// </summary>
         public void Refresh()
         {
-            if (null != selected)
-                controls.IsEnabled = true;
-
             var wnd = Application.Current.MainWindow as MainWindow;
+            // Get all opened documents
             Documents = wnd.DocManager.Documents;
+            // Get selected document
             Selected = wnd.DocManager.Selected;
 
+            // Push in the Canvas every Document's UIOject
             SetUIObject();
 
+            // Refresh Data Context
             DataContext = null;
             DataContext = this;
         }
 
+        /// <summary>
+        /// Push in the document every UIElement's Canvas
+        /// </summary>
         public void GetUIObject()
         {
             if (null != Selected)
@@ -89,6 +88,9 @@ namespace Chartful.Pages
             }
         }
 
+        /// <summary>
+        /// Push in the Canvas every Document's UIOject
+        /// </summary>
         public void SetUIObject()
         {
             if (null != Selected)
@@ -109,6 +111,11 @@ namespace Chartful.Pages
             }
         }
         
+        /// <summary>
+        /// Change the selected document
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextItemList_MouseClick(object sender, MouseButtonEventArgs e)
         {
             var wnd = Application.Current.MainWindow as MainWindow;
@@ -116,7 +123,11 @@ namespace Chartful.Pages
             Refresh();
         }
 
-        // Drag and Drop
+        /// <summary>
+        /// Get the dragged Element
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void pickData_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -129,11 +140,11 @@ namespace Chartful.Pages
             }
         }
 
-        //private void canvas_MouseMove(object sender, MouseEventArgs e)
-        //{
-        //    canvasCursorLocation = e.GetPosition(this);
-        //}
-
+        /// <summary>
+        /// Drop the dragged Element
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void receiver_Drop(object sender, DragEventArgs e)
         {
             if (Selected == null)
@@ -149,24 +160,34 @@ namespace Chartful.Pages
 
                 if (typeName == "Title")
                 {
+                    //Get the Canvas'position
                     Point relativePoint = dragCanvas.TransformToAncestor(this)
                                   .Transform(new Point(0, 0));
 
                     UIObject o = new UIObject();
 
+                    //Set the new object's position
                     o.Left = e.GetPosition(this).X - relativePoint.X;
                     o.Top = e.GetPosition(this).Y - relativePoint.Y;
 
+                    // Add the new Object to the content List
                     Selected.Content.Add(o);
                 }
 
+                //log the modification
                 this.StatusContent.Children.Add(new TextBlock { Text = "Add : " + typeName });
+
                 Refresh();
             }
             else
                 e.Effects = DragDropEffects.None;
         }
 
+        /// <summary>
+        /// Update the document's content when modifications are over
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dragCanvas_MouseLeave(object sender, MouseEventArgs e)
         {
             GetUIObject();

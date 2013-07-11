@@ -39,56 +39,40 @@ namespace Chartful.Pages
         {
             documents = new ObservableCollection<Document>();
 
-            for(int i = 0; i < 10; i++)
-                documents.Add(new Document(@"C:\www\chartful\test"+i+".ctf"));
+            //Tests for the recent files list
+            //for(int i = 0; i < 10; i++)
+            //    documents.Add(new Document(@"C:\www\chartful\test"+i+".ctf"));
 
             InitializeComponent();
             DataContext = this;
         }
 
+        /// <summary>
+        /// Show the files explorer to open a file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void open_Click(object sender, RoutedEventArgs e)
         {
-            var ofd = new OpenFileDialog();
-            ofd.InitialDirectory = "c:\\";
-            ofd.Filter = "Chartful files (*.ctf)|*.ctf|All files (*.*)|*.*";
+            var wnd = Application.Current.MainWindow as MainWindow;
+            bool opened = wnd.DocManager.OpenFile();
 
-            Nullable<bool> result = ofd.ShowDialog();
-
-            // Process open file dialog box results
-            if (result == true)
-            {
-                // Open document
-                var wnd = Application.Current.MainWindow as MainWindow;
-                wnd.DocManager.Documents.Add(new Document(ofd.FileName));
-                wnd.DocManager.SelectLastDocument();
-
+            if (opened)
                 NavigationCommands.GoToPage.Execute("/Pages/Workspace.xaml", null);
-            }
         }
 
+        /// <summary>
+        /// Show the files explorer to create a new file
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void new_Click(object sender, RoutedEventArgs e)
-        {
-            
-            var sfd = new SaveFileDialog();
-            sfd.InitialDirectory = "c:\\";
-            sfd.Filter = "Chartful files (*.ctf)|*.ctf|All files (*.*)|*.*";
-            sfd.FileName = "New Document"; // Default file name
-            sfd.DefaultExt = ".ctf";
+        {    
+            var wnd = Application.Current.MainWindow as MainWindow;
+            bool created = wnd.DocManager.NewFile();
 
-            Nullable<bool> result = sfd.ShowDialog();
-
-            // Process open file dialog box results
-            if (result == true)
-            {
-                // Open document
-                var wnd = Application.Current.MainWindow as MainWindow;
-                wnd.DocManager.Documents.Add(new Document(sfd.FileName));
-                wnd.DocManager.SelectLastDocument();
-                
-                File.Create(sfd.FileName);
-
+            if(created)
                 NavigationCommands.GoToPage.Execute("/Pages/Workspace.xaml", null);
-            }
         }
 
         protected void HandleDoubleClick(object sender, MouseButtonEventArgs e)

@@ -14,6 +14,7 @@ namespace Chartful.Model
 {
     public class Document : INotifyPropertyChanged
     {
+        // for wpf binding
         public event PropertyChangedEventHandler PropertyChanged;
 
         string path;
@@ -22,6 +23,10 @@ namespace Chartful.Model
         
         public List<UIObject> Content { get; set; }
 
+        /// <summary>
+        /// New document
+        /// </summary>
+        /// <param name="p">document's path, defaut value is authorized</param>
         public Document(string p = "New Document.ctf")
         {
             Content = new List<UIObject>();
@@ -31,6 +36,10 @@ namespace Chartful.Model
 
         }
 
+        /// <summary>
+        /// Get a representation string of the document
+        /// </summary>
+        /// <returns>Formated name and path</returns>
         public override string ToString()
         {
             return string.Format("{0} - {1}", name, path);
@@ -43,9 +52,11 @@ namespace Chartful.Model
                 return name;
             }
 
+            //Set name with a splited path 
             private set
             {
                 name = value.Split('\\')[value.Split('\\').Length - 1];
+                //For WPF binding
                 RaisePropertyChanged("Name");
             }
         }
@@ -60,6 +71,7 @@ namespace Chartful.Model
             set
             {
                 isSelected = value;
+                //For WPF binding
                 RaisePropertyChanged("IsSelected");
             }
         }
@@ -71,6 +83,7 @@ namespace Chartful.Model
                 return path;
             }
 
+            // Set every document's UIObject when the path is set
             set
             {
                 path = value;
@@ -78,20 +91,30 @@ namespace Chartful.Model
             }
         }
 
+        /// <summary>
+        /// return BBCode link
+        /// </summary>
         public string BBCode
         {
             get
             {
-                return string.Format("[url=/Pages/Workspace.xaml][b]{1}[/b] - {0}[/url]", path, name);
+                return string.Format("[url={0}][b]{1}[/b] - {0}[/url]", path, name);
             }
         }
 
+        /// <summary>
+        /// Notify any property's changed for WPF binding
+        /// </summary>
+        /// <param name="propertyName">Name of the property</param>
         private void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged == null) return;
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
 
+        /// <summary>
+        /// Write the document in a .ctf files
+        /// </summary>
         public void ParseToXML()
         {
             try
@@ -122,6 +145,9 @@ namespace Chartful.Model
 
         }
 
+        /// <summary>
+        /// read and parse every file's Object
+        /// </summary>
         public void ParseFromXML()
         {
             try
