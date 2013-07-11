@@ -24,10 +24,11 @@ namespace Chartful.Model
 
         public Document(string p = "New Document.ctf")
         {
-            path = p;
+            Content = new List<UIObject>();
+
+            Path = p;
             Name = path;
 
-            Content = new List<UIObject>();
         }
 
         public override string ToString()
@@ -68,6 +69,12 @@ namespace Chartful.Model
             get
             {
                 return path;
+            }
+
+            set
+            {
+                path = value;
+                ParseFromXML();
             }
         }
 
@@ -134,7 +141,12 @@ namespace Chartful.Model
 
                     UIObject cxml = new UIObject(_text, _fontsize, _top, _left);
                     Content.Add(cxml);
-                };
+                }
+
+                foreach (UIObject ui in Content)
+                {
+                    Console.WriteLine(ui.Text);
+                }
 
             }
             catch (Exception e)
