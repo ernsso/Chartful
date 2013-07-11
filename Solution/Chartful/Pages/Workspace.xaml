@@ -70,16 +70,28 @@
                         </Ctrl:DragCanvas>
                     </Border>
 
-                    <StackPanel Grid.Column="5" Name="controls">
-                        <Label Name="data1"
+                    <StackPanel Grid.Column="5">
+                        <StackPanel Name="controls">
+                            <TextBlock Style="{StaticResource Heading2}" Text="Tools"/>
+                            <Label Name="data1"
                                Foreground="#666666"
                                FontSize="16"
                                MouseMove="pickData_MouseMove" >
-                            <WrapPanel>
-                                <Ellipse Height="5" Width="5" Fill="DarkGray"/>
-                                <TextBlock Text="Title"/>
-                            </WrapPanel>
-                        </Label>
+                                <WrapPanel>
+                                    <Ellipse Height="5" Width="5" Fill="DarkGray"/>
+                                    <TextBlock Text="Title"/>
+                                </WrapPanel>
+                            </Label>
+                        </StackPanel>
+
+                        <StackPanel Margin="0, 25, 0, 0">
+                            <TextBlock Style="{StaticResource Heading2}" Text="Properties" Margin="0, 0, 0, 5"/>
+
+                            <TextBlock Text="Content" 
+                                       Foreground="#666666"
+                                       FontSize="15"/>
+                            <TextBox Name="ContentPropertyBox"/>
+                        </StackPanel>
                     </StackPanel>
 
                     <StackPanel Name="StatusContent" >

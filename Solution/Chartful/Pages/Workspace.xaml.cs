@@ -30,6 +30,7 @@ namespace Chartful.Pages
     {
         public ObservableCollection<Document> Documents { get; private set; }
         public Document Selected { get; set; }
+        int focused;
 
         public Workspace()
         {
@@ -121,6 +122,7 @@ namespace Chartful.Pages
                     item.FontSize = 36;
                     item.FontWeight = FontWeights.Bold;
                     item.Background = Brushes.Transparent;
+                    item.MouseLeftButtonDown += new MouseButtonEventHandler(SetFocus_MouseLeftButtonDown);
 
                     dragCanvas.Children.Add(item);
                     Canvas.SetLeft(item, o.Left);
@@ -197,6 +199,12 @@ namespace Chartful.Pages
         private void dragCanvas_MouseLeave(object sender, MouseEventArgs e)
         {
             GetUIObject();
+        }
+
+        private void SetFocus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //focused = Selected.FindUIObject(((TextBlock)sender).Name);
+            ContentPropertyBox.Text = ((TextBlock)sender).Text;
         }
     }
 }
