@@ -15,5 +15,10 @@ namespace Chartful.BLL.p2p
         {
             PeerChannel.myUpdateDelegate.Invoke(data);
         }
+
+        public void sendString(string data)
+        {
+            PeerChannel.myTestDelegate.Invoke(data);
+        }
     }
 }

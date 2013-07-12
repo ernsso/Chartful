@@ -184,6 +184,7 @@ namespace Chartful.Pages
 
                     // Add the new Object to the content List
                     Selected.Content.Add(o);
+                    (Application.Current.MainWindow as MainWindow).MyPeerChannel.Send(o);
                 }
 
                 //log the modification

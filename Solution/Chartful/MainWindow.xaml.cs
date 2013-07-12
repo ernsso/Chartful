@@ -25,14 +25,14 @@ namespace Chartful
     /// </summary>
     public partial class MainWindow : ModernWindow
     {
-        public PeerChannel MyPeerChannel { get; private set; }
+        public PeerChannel MyPeerChannel { get; set; }
         public Manager DocManager { get; private set; }
 
         public MainWindow()
         {
             DocManager = new Manager();
             MyPeerChannel = new PeerChannel();
-            PeerChannel.myUpdateDelegate = Refresh;
+            PeerChannel.myUpdateDelegate = new UpdateDelegate(this.Refresh);
 
             InitializeComponent();
         }
@@ -44,6 +44,7 @@ namespace Chartful
         /// <param name="o"></param>
         public void Refresh(UIObject o)
         {
+            //MessageBox.Show(o.ID + " : " + o.Content);
             DocManager.Selected.UpdateUIObject(o);
         }
     }

@@ -13,6 +13,9 @@ namespace Chartful.BLL.p2p
     {
         [OperationContract(IsOneWay = true)]
         void sendUIObject(UIObject data);
+
+        [OperationContract(IsOneWay = true)]
+        void sendString(string data);
     }
 
     public interface IChartfulChannel : IChartful, IClientChannel
