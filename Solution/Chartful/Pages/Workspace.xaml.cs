@@ -30,13 +30,12 @@ namespace Chartful.Pages
     {
         public ObservableCollection<Document> Documents { get; private set; }
         public Document Selected { get; set; }
-        int lastID;
+        int focused;
 
         public Workspace()
         {
             InitializeComponent();
             DataContext = this;
-            lastID = 0;
         }
 
         /// <summary>
@@ -95,7 +94,6 @@ namespace Chartful.Pages
                 {
                     UIObject o = new UIObject();
 
-                    o.ID = ((TextBlock)e).Name;
                     o.Content = ((TextBlock)e).Text;
                     o.FontSize = ((TextBlock)e).FontSize;
                     o.Left = Canvas.GetLeft(e);
@@ -120,8 +118,7 @@ namespace Chartful.Pages
 
                 foreach (UIObject o in Selected.Content)
                 {
-                    TextBlock item = new TextBlock { Text = o.Content };
-                    item.Name = o.ID;
+                    TextBlock item = new TextBlock { Text = "Your Title" };
                     item.FontSize = 36;
                     item.FontWeight = FontWeights.Bold;
                     item.Background = Brushes.Transparent;
@@ -176,8 +173,6 @@ namespace Chartful.Pages
                                   .Transform(new Point(0, 0));
 
                     UIObject o = new UIObject();
-                    o.ID = typeName + ++lastID;
-                    o.Content = "New Title";
 
                     //Set the new object's position
                     o.Left = e.GetPosition(this).X - relativePoint.X;
@@ -210,11 +205,6 @@ namespace Chartful.Pages
         {
             //focused = Selected.FindUIObject(((TextBlock)sender).Name);
             ContentPropertyBox.Text = ((TextBlock)sender).Text;
-        }
-
-        private void dragCanvas_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            ContentPropertyBox.Text = Selected.Content[Selected.Focused].Content;
         }
     }
 }

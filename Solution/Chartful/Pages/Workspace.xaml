@@ -66,8 +66,7 @@
                                     Background="white"
                                     AllowDrop="True" 
                                     Drop="receiver_Drop"
-                                    MouseLeave="dragCanvas_MouseLeave"
-                                    MouseLeftButtonDown="dragCanvas_MouseLeftButtonDown">
+                                    MouseLeave="dragCanvas_MouseLeave">
                         </Ctrl:DragCanvas>
                     </Border>
 

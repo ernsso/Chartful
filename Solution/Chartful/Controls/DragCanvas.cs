@@ -256,13 +256,8 @@ namespace Chartful.Controls
 			// Walk up the visual tree from the element that was clicked, 
 			// looking for an element that is a direct child of the Canvas.
 			this.ElementBeingDragged = this.FindCanvasChild( e.Source as DependencyObject );
-            if (this.ElementBeingDragged == null)
-                return;
-            else
-            {
-                var wnd = Application.Current.MainWindow as MainWindow;
-                wnd.DocManager.Selected.FindUIObject(((TextBlock)this.ElementBeingDragged).Name);
-            }
+			if( this.ElementBeingDragged == null )
+				return;
 
 			// Get the element's offsets from the four sides of the Canvas.
 			double left = Canvas.GetLeft( this.ElementBeingDragged );
