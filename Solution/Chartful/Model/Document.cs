@@ -21,7 +21,8 @@ namespace Chartful.Model
         string path;
         string name;
         bool isSelected;
-        
+
+        public int Focused { get; set; }
         public List<UIObject> Content { get; set; }
 
         /// <summary>
@@ -130,6 +131,7 @@ namespace Chartful.Model
                 {
                     // écrire dans le fichier 
                     myXmlTextWriter.WriteStartElement("Object", null);
+                        myXmlTextWriter.WriteAttributeString("Id", o.ID);
                         myXmlTextWriter.WriteAttributeString("Text", o.Content);
                         myXmlTextWriter.WriteAttributeString("Type", o.UIType);
                         myXmlTextWriter.WriteAttributeString("FontSize", o.FontSize.ToString());
@@ -156,6 +158,7 @@ namespace Chartful.Model
             try
             {
                 XDocument doc = XDocument.Load(this.path);
+                string _id;
                 string _text;
                 string _type;
                 string _fontsize;
@@ -164,13 +167,14 @@ namespace Chartful.Model
 
                 foreach (var obj in doc.Descendants("Object"))
                 {
+                    _id = obj.Attribute("ID").Value;
                     _text = obj.Attribute("Text").Value;
                     _type = obj.Attribute("Type").Value;
                     _fontsize = obj.Attribute("FontSize").Value;
                     _top = obj.Attribute("Top").Value;
                     _left = obj.Attribute("Left").Value;
 
-                    UIObject cxml = new UIObject(_text,_type, _fontsize, _top, _left);
+                    UIObject cxml = new UIObject(_id, _text,_type, _fontsize, _top, _left);
                     Content.Add(cxml);
                 }
             }
@@ -240,7 +244,7 @@ namespace Chartful.Model
         /// </summary>
         /// <param name="id">ObjectUI's ID</param>
         /// <returns>ObjectUI's index or -1 if not found</returns>
-        private int FindUIObject(string id)
+        public int FindUIObject(string id)
         {
             for (int i = 0; i < Content.Count; i++)
                 if (Content[i].ID == id) return i;

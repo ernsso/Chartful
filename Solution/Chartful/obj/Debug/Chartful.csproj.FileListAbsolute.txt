@@ -112,3 +112,6 @@ C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Work
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.g.resources
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe.config
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.pdb
