@@ -231,9 +231,26 @@ namespace Chartful.Pages
                         tb.Text = ContentPropertyBox.Text;
 
                 UIObject o = (UIObject)UIObjectList.SelectedItem;
-                o.Content = ContentPropertyBox.Text; ;
+                o.Content = ContentPropertyBox.Text;
                 (Application.Current.MainWindow as MainWindow).MyPeerChannel.Send(o);
             }
+        }
+
+        int mouveNumber = 0;
+
+        public void UpdateUIObject(UIObject o)
+        {
+            if (0 == mouveNumber++)
+            {
+                Selected.UpdateUIObject(o);
+                (Application.Current.MainWindow as MainWindow).MyPeerChannel.Send(o);
+            }
+            else
+                mouveNumber++;
+
+            if (25 < mouveNumber)
+                mouveNumber = 0;
+            //GetUIObject();
         }
     }
 }

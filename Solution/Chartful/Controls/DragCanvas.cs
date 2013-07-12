@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chartful.BLL;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
@@ -353,6 +354,16 @@ namespace Chartful.Controls
 				Canvas.SetTop( this.ElementBeingDragged, newVerticalOffset );
 			else
 				Canvas.SetBottom( this.ElementBeingDragged, newVerticalOffset );
+
+            //Send the object
+            UIObject o = new UIObject();
+            TextBlock tb = (TextBlock)this.ElementBeingDragged;
+            o.ID = tb.Name;
+            o.Left = Canvas.GetLeft(tb);
+            o.Top = Canvas.GetTop(tb);
+            o.Content = tb.Text;
+
+            (Application.Current.MainWindow as MainWindow).Editor.UpdateUIObject(o);
 
 			#endregion // Move Drag Element
 		}

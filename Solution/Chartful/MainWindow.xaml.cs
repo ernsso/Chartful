@@ -24,8 +24,10 @@ namespace Chartful
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+        
     public partial class MainWindow : ModernWindow
     {
+        public static MainWindow Current { get; private set; } 
         public PeerChannel MyPeerChannel { get; set; }
         public Manager DocManager { get; private set; }
 
@@ -33,6 +35,8 @@ namespace Chartful
 
         public MainWindow()
         {
+            Current = this;
+
             DocManager = new Manager();
             MyPeerChannel = new PeerChannel();
             PeerChannel.myUpdateDelegate = new UpdateDelegate(this.Refresh);
