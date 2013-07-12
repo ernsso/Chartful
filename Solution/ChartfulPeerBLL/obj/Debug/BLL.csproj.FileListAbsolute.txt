@@ -6,5 +6,3 @@ C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\Cha
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.pdb
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb
-C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.dll.config
-C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
