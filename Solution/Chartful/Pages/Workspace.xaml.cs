@@ -30,13 +30,11 @@ namespace Chartful.Pages
     {
         public ObservableCollection<Document> Documents { get; private set; }
         public Document Selected { get; set; }
-        int lastID;
 
         public Workspace()
         {
             InitializeComponent();
             DataContext = this;
-            lastID = 0;
         }
 
         /// <summary>
@@ -121,10 +119,10 @@ namespace Chartful.Pages
                 foreach (UIObject o in Selected.Content)
                 {
                     TextBlock item = new TextBlock { Text = o.Content };
+                    item.Name = o.ID;
                     item.FontSize = 36;
                     item.FontWeight = FontWeights.Bold;
                     item.Background = Brushes.Transparent;
-                    item.MouseLeftButtonDown += new MouseButtonEventHandler(SetFocus_MouseLeftButtonDown);
 
                     dragCanvas.Children.Add(item);
                     Canvas.SetLeft(item, o.Left);
@@ -175,7 +173,7 @@ namespace Chartful.Pages
                                   .Transform(new Point(0, 0));
 
                     UIObject o = new UIObject();
-                    o.ID = typeName + ++lastID;
+                    o.ID = typeName + ++Selected.LastID;
                     o.Content = "New " + o.ID;
 
                     //Set the new object's position
@@ -206,18 +204,29 @@ namespace Chartful.Pages
             GetUIObject();
         }
 
-        private void SetFocus_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void UIObjectList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //focused = Selected.FindUIObject(((TextBlock)sender).Name);
-            ContentPropertyBox.Text = ((TextBlock)sender).Text;
+            if (null != UIObjectList.SelectedItem)
+            {
+                Selected.Focused = Selected.FindUIObject(((UIObject)UIObjectList.SelectedItem).ID);
+                ContentPropertyBox.Text = ((UIObject)UIObjectList.SelectedItem).Content;
+            }
+            else
+            {
+                Selected.Focused = -1;
+                ContentPropertyBox.Text = "";
+            }
         }
 
-        private void TextBlock_KeyDown(object sender, KeyEventArgs e)
+        private void ContentPropertyBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            Selected.Content[Selected.Focused].Content = ContentPropertyBox.Text;
-            Selected.UpdateUIObject(Selected.Content[Selected.Focused]);
-
-            Refresh();
+            if (-1 < Selected.Focused)
+            {
+                Selected.UpdateUIObject(Selected.Content[Selected.Focused]);
+                foreach (TextBlock tb in dragCanvas.Children)
+                    if (tb.Name == ((UIObject)UIObjectList.SelectedItem).ID)
+                        tb.Text = ContentPropertyBox.Text;
+            }
         }
     }
 }

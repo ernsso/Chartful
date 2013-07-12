@@ -87,12 +87,12 @@
                         <StackPanel Margin="0, 25, 0, 0">
                             <TextBlock Style="{StaticResource Heading2}" Text="Properties" Margin="0, 0, 0, 5"/>
 
-                            <ComboBox ItemsSource="{Binding Selected.Content}"/>
+                            <ComboBox ItemsSource="{Binding Selected.Content}" Name="UIObjectList" SelectionChanged="UIObjectList_SelectionChanged"/>
 
-                            <TextBlock Text="Content" KeyDown="TextBlock_KeyDown" 
+                            <TextBlock Text="Content"
                                        Foreground="#666666"
                                        FontSize="15"/>
-                            <TextBox Name="ContentPropertyBox"/>
+                            <TextBox Name="ContentPropertyBox" TextChanged="ContentPropertyBox_TextChanged" />
                         </StackPanel>
                     </StackPanel>
 

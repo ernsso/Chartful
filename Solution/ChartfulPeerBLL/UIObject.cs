@@ -24,13 +24,19 @@ namespace Chartful.BLL
         public double Left { get; set; }
 		
         public UIObject() { }
-        public UIObject(string _text,string _type, string _fontsize, string _top, string _left)
+        public UIObject(string _id, string _text,string _type, string _fontsize, string _top, string _left)
         {
+            ID = _id;
             Content = _text;
             UIType = _type;
             FontSize = Convert.ToDouble(_fontsize);
             Top = Convert.ToDouble(_top);
             Left = Convert.ToDouble(_left);
+        }
+
+        public override string ToString()
+        {
+            return ID;
         }
     }
 }

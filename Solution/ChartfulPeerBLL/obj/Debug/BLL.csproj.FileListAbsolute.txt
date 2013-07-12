@@ -6,3 +6,8 @@ C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\Cha
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.pdb
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb

@@ -24,6 +24,7 @@ namespace Chartful.Model
 
         public int Focused { get; set; }
         public List<UIObject> Content { get; set; }
+        public int LastID { get; set; }
 
         /// <summary>
         /// New document
@@ -35,7 +36,8 @@ namespace Chartful.Model
 
             Path = p;
             Name = path;
-
+            LastID = 0;
+            Focused = -1;
         }
 
         /// <summary>
@@ -167,7 +169,7 @@ namespace Chartful.Model
 
                 foreach (var obj in doc.Descendants("Object"))
                 {
-                    _id = obj.Attribute("ID").Value;
+                    _id = obj.Attribute("Id").Value;
                     _text = obj.Attribute("Text").Value;
                     _type = obj.Attribute("Type").Value;
                     _fontsize = obj.Attribute("FontSize").Value;
@@ -176,6 +178,8 @@ namespace Chartful.Model
 
                     UIObject cxml = new UIObject(_id, _text,_type, _fontsize, _top, _left);
                     Content.Add(cxml);
+
+                    LastID++;
                 }
             }
             catch (Exception e)
