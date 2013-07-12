@@ -10,6 +10,7 @@ using System.Xml.Serialization;
 using System.Xml.Linq;
 using System.Xml;
 using Chartful.BLL;
+using System.Windows;
 
 namespace Chartful.Model
 {
@@ -239,7 +240,7 @@ namespace Chartful.Model
                 ParseToXML();
 
                 //Push to the document's difusion list
-                //Add function here
+                //(Application.Current.MainWindow as MainWindow).MyPeerChannel.Send(o);                
             }
         }
 

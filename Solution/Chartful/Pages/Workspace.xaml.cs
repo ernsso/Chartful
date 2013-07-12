@@ -226,6 +226,10 @@ namespace Chartful.Pages
                 foreach (TextBlock tb in dragCanvas.Children)
                     if (tb.Name == ((UIObject)UIObjectList.SelectedItem).ID)
                         tb.Text = ContentPropertyBox.Text;
+
+                UIObject o = (UIObject)UIObjectList.SelectedItem;
+                o.Content = ContentPropertyBox.Text; ;
+                (Application.Current.MainWindow as MainWindow).MyPeerChannel.Send(o);
             }
         }
     }
