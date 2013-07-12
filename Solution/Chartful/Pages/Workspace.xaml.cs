@@ -20,6 +20,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Chartful.BLL;
+using System.Collections.Specialized;
 
 namespace Chartful.Pages
 {
@@ -35,6 +36,8 @@ namespace Chartful.Pages
         {
             InitializeComponent();
             DataContext = this;
+
+            (Application.Current.MainWindow as MainWindow).Editor = this;
         }
 
         /// <summary>

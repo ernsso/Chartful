@@ -39,11 +39,13 @@
                              HorizontalAlignment="Center"/>            
         </StackPanel>
         
+        <!--
         <StackPanel Grid.Column="2" Orientation="Vertical">
             <TextBlock Text="Recent" Style="{StaticResource Heading2}"/>
 
             <ListView ItemsSource="{Binding Path=Documents}"
                       ItemContainerStyle="{StaticResource itemstyle}"/>
         </StackPanel>
+        -->
     </Grid>
 </UserControl>

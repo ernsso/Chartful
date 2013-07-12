@@ -238,9 +238,7 @@ namespace Chartful.Model
 
                 //Rewrite the file
                 ParseToXML();
-
-                //Push to the document's difusion list
-                //(Application.Current.MainWindow as MainWindow).MyPeerChannel.Send(o);                
+                RaisePropertyChanged("Name");
             }
         }
 

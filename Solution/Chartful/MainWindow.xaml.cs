@@ -17,6 +17,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Chartful.BLL.p2p;
 using Chartful.BLL;
+using Chartful.Pages;
 
 namespace Chartful
 {
@@ -27,6 +28,8 @@ namespace Chartful
     {
         public PeerChannel MyPeerChannel { get; set; }
         public Manager DocManager { get; private set; }
+
+        public Workspace Editor { get; set; }
 
         public MainWindow()
         {
@@ -46,6 +49,9 @@ namespace Chartful
         {
             //MessageBox.Show(o.ID + " : " + o.Content);
             DocManager.Selected.UpdateUIObject(o);
+
+            if (null != Editor)
+                Editor.SetUIObject();
         }
     }
 }
