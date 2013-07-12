@@ -32,9 +32,19 @@ namespace Chartful
         {
             DocManager = new Manager();
             MyPeerChannel = new PeerChannel();
-            PeerChannel.myUpdateDelegate = new UpdateDelegate(DocManager.Selected.UpdateUIObject);
+            PeerChannel.myUpdateDelegate = new UpdateDelegate(Refresh);
 
             InitializeComponent();
+        }
+
+
+        /// <summary>
+        /// Mise à jour de l'affichage à la reception de données
+        /// </summary>
+        /// <param name="o"></param>
+        public void Refresh(Chartful.BLL.UIObject o)
+        {
+            DocManager.Selected.Content.Add((UIObject)o);
         }
     }
 }

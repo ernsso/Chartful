@@ -24,7 +24,7 @@ namespace Chartful.BLL.p2p
                 // Open the ServiceHostBase to create listeners and start listening for messages.
                 serviceHost.Open();
 
-                EndpointAddress lookFor = new EndpointAddress(serviceHost.BaseAddresses[0].ToString() + "broadcast");
+                EndpointAddress lookFor = new EndpointAddress(serviceHost.BaseAddresses[0].ToString() + "tchat");
 
                 factory = new ChannelFactory<IChartfulChannel>("BroadcastEndpoint", lookFor);
 
