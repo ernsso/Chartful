@@ -11,7 +11,7 @@ namespace Chartful.BLL
     public class UIObject
     {
 		[DataMember]
-        public int ID { get; set; }
+        public string ID { get; set; }
         [DataMember]
         public string UIType { get; set; }
         [DataMember]
@@ -24,7 +24,7 @@ namespace Chartful.BLL
         public double Left { get; set; }
 		
         public UIObject() { }
-        public UIObject(int _id, string _text,string _type, string _fontsize, string _top, string _left)
+        public UIObject(string _id, string _text,string _type, string _fontsize, string _top, string _left)
         {
             ID = _id;
             Content = _text;
@@ -36,7 +36,7 @@ namespace Chartful.BLL
 
         public override string ToString()
         {
-            return UIType+ID; 
+            return ID;
         }
     }
 }

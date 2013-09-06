@@ -356,19 +356,14 @@ namespace Chartful.Controls
 				Canvas.SetBottom( this.ElementBeingDragged, newVerticalOffset );
 
             //Send the object
-            if (this.elementBeingDragged is TextBlock)
-            {
-                UIObject o = new UIObject();
-                TextBlock tb = (TextBlock)this.ElementBeingDragged;
-                o.UIType = "Title";
-                o.ID = int.Parse(tb.Name.Replace(o.UIType, ""));
-                o.Left = Canvas.GetLeft(tb);
-                o.Top = Canvas.GetTop(tb);
-                o.Content = tb.Text;
+            UIObject o = new UIObject();
+            TextBlock tb = (TextBlock)this.ElementBeingDragged;
+            o.ID = tb.Name;
+            o.Left = Canvas.GetLeft(tb);
+            o.Top = Canvas.GetTop(tb);
+            o.Content = tb.Text;
 
-                (Application.Current.MainWindow as MainWindow).Editor.UpdateUIObject(o);
-            }
-
+            (Application.Current.MainWindow as MainWindow).Editor.UpdateUIObject(o);
 
 			#endregion // Move Drag Element
 		}

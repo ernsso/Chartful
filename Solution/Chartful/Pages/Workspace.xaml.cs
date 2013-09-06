@@ -21,7 +21,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Chartful.BLL;
 using System.Collections.Specialized;
-using System.Text.RegularExpressions;
 
 namespace Chartful.Pages
 {
@@ -97,17 +96,13 @@ namespace Chartful.Pages
                 {
                     UIObject o = new UIObject();
 
-                    if (e is TextBlock)
-                    {
-                        o.UIType = "Title";
-                        o.ID = int.Parse(((TextBlock)e).Name.Replace(o.UIType, ""));
-                        o.Content = ((TextBlock)e).Text;
-                        o.FontSize = ((TextBlock)e).FontSize;
-                        o.Left = Canvas.GetLeft(e);
-                        o.Top = Canvas.GetTop(e);
+                    o.ID = ((TextBlock)e).Name;
+                    o.Content = ((TextBlock)e).Text;
+                    o.FontSize = ((TextBlock)e).FontSize;
+                    o.Left = Canvas.GetLeft(e);
+                    o.Top = Canvas.GetTop(e);
 
-                        Selected.Content.Add(o);
-                    }
+                    Selected.Content.Add(o);
                 }
 
                 // Write the modifications in the file
@@ -127,7 +122,7 @@ namespace Chartful.Pages
                 foreach (UIObject o in Selected.Content)
                 {
                     TextBlock item = new TextBlock { Text = o.Content };
-                    item.Name = string.Format("{0}{1}", o.UIType, o.ID);
+                    item.Name = o.ID;
                     item.FontSize = 36;
                     item.FontWeight = FontWeights.Bold;
                     item.Background = Brushes.Transparent;
@@ -181,8 +176,7 @@ namespace Chartful.Pages
                                   .Transform(new Point(0, 0));
 
                     UIObject o = new UIObject();
-                    o.UIType = "Title";
-                    o.ID = ++Selected.LastID;
+                    o.ID = typeName + ++Selected.LastID;
                     o.Content = "New " + o.ID;
 
                     //Set the new object's position
@@ -233,7 +227,7 @@ namespace Chartful.Pages
             {
                 Selected.UpdateUIObject(Selected.Content[Selected.Focused]);
                 foreach (TextBlock tb in dragCanvas.Children)
-                    if (tb.Name == string.Format("{0}", ((UIObject)UIObjectList.SelectedItem).ID))
+                    if (tb.Name == ((UIObject)UIObjectList.SelectedItem).ID)
                         tb.Text = ContentPropertyBox.Text;
 
                 UIObject o = (UIObject)UIObjectList.SelectedItem;
