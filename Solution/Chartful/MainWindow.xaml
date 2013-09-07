@@ -17,7 +17,7 @@
 
         <mui:LinkGroup DisplayName="editor" >
             <mui:LinkGroup.Links>
-                <!--<mui:Link DisplayName="properties" Source="/Pages/Properties.xaml" /> -->
+                <mui:Link DisplayName="properties" Source="/Pages/Properties.xaml" />
                 <mui:Link DisplayName="workspace" Source="/Pages/Workspace.xaml" />
             </mui:LinkGroup.Links> 
         </mui:LinkGroup>

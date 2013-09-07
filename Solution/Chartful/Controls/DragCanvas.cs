@@ -363,7 +363,7 @@ namespace Chartful.Controls
             o.Top = Canvas.GetTop(tb);
             o.Content = tb.Text;
 
-            //(Application.Current.MainWindow as MainWindow).Editor.UpdateUIObject(o);
+            (Application.Current.MainWindow as MainWindow).Editor.UpdateUIObject(o);
 
 			#endregion // Move Drag Element
 		}

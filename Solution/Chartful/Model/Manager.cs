@@ -1,5 +1,4 @@
-﻿using Chartful.BLL;
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -14,14 +13,11 @@ namespace Chartful.Model
     {
         public ObservableCollection<Document> Documents { get; private set; }
 
-        #region Constructors
         public Manager()
         {
             Documents = new ObservableCollection<Document>();
         }
-        #endregion
 
-        #region Document Management
         /// <summary>
         /// Set to Selected the Document 
         /// </summary>
@@ -33,6 +29,7 @@ namespace Chartful.Model
                     d.IsSelected = true;
                 else
                     d.IsSelected = false;
+
         }
 
         /// <summary>
@@ -55,32 +52,10 @@ namespace Chartful.Model
                     if (d.IsSelected)
                         return d;
 
-                this.Documents.Add(new Document());
-                SelectLastDocument();
-
-                return this.Selected;
+                return null;
             }
         }
 
-        public void Set(Data data)
-        {
-            var document = Find(data.DocumentID);
-
-            if(null != document)
-                document.Update(data);
-        }
-
-        public Document Find(string documentName)
-        {
-            foreach (Document d in Documents)
-                if (d.Name == documentName)
-                    return d;
-
-            return null;
-        }
-        #endregion
-
-        #region File Management
         /// <summary>
         /// Open an existing file
         /// </summary>
@@ -102,15 +77,6 @@ namespace Chartful.Model
             }
 
             return result == true ? true : false;
-        }
-
-        public bool OpenFile(string fileName)
-        {
-            this.Documents.Add(new Document());
-            this.SelectLastDocument();
-            Selected.Name = fileName;
-            
-            return true;
         }
 
         /// <summary>
@@ -139,24 +105,5 @@ namespace Chartful.Model
 
             return result == true ? true : false;
         }
-
-        public string SelectPath()
-        {
-            
-            var sfd = new SaveFileDialog();
-            sfd.InitialDirectory = "c:\\";
-            sfd.Filter = "Chartful files (*.ctf)|*.ctf|All files (*.*)|*.*";
-            sfd.FileName = "New Document"; // Default file name
-            sfd.DefaultExt = ".ctf";
-
-            Nullable<bool> result = sfd.ShowDialog();
-
-            // Process open file dialog box results
-            if (result == true)
-                return sfd.FileName;
-
-            return null;
-        }
-        #endregion
     }
 }

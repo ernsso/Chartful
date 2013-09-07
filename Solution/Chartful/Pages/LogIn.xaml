@@ -26,36 +26,34 @@
                                Grid.Row="0" 
                                Margin="0,10,0,0"
                                VerticalAlignment="Center"
-                               Text="DOCUMENT ID" />
+                               Text="USER NAME" />
 
                     <TextBlock Grid.Column="0" 
                                Grid.Row="1" 
                                Margin="0,10,0,0"
                                VerticalAlignment="Center"
-                               Text="USER NAME" />
+                               Text="PASSWORD" />
 
-                    <TextBox Name="DocumentId"
-                             Grid.Column="1" 
+                    <TextBox Grid.Column="1" 
                              Grid.Row="0" 
                              Margin="0,10,0,0"
                              Width="250"
-                             HorizontalAlignment="Left" />
+                             HorizontalAlignment="Left"
+                             Name="userName" />
 
-                    <TextBox Name="Username"
-                             Grid.Column="1" 
+                    <PasswordBox Grid.Column="1" 
                              Grid.Row="1" 
                              Margin="0,10,0,0"
                              Width="250"
-                             HorizontalAlignment="Left" />
+                             HorizontalAlignment="Left"
+                             Name="password" />
 
-                    <Button Name="SignIn"
-                            Grid.Column="1" 
+                    <Button Grid.Column="1" 
                             Grid.Row="2"
                             Margin="0,10,0,0"
                             HorizontalAlignment="Left"
                             Width="100"
-                            Content="SIGN IN"
-                            Click="SignIn_Click"/>
+                            Content="SIGN IN"/>
                 </Grid>   
             </StackPanel>
         </ScrollViewer>

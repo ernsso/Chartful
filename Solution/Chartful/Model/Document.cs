@@ -19,79 +19,50 @@ namespace Chartful.Model
         // for wpf binding
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string Name { get; set; }
-
         string path;
-        string text;
-
+        string name;
         bool isSelected;
 
-        public List<UIObject> Objects { get; set; }
+        public int Focused { get; set; }
+        public List<UIObject> Content { get; set; }
+        public int LastID { get; set; }
 
-        public int LastObjectId { get; set; }
-        public int FocusedObjectId { get; set; }
-
-        #region Constructors
         /// <summary>
         /// New document
         /// </summary>
         /// <param name="p">document's path, defaut value is authorized</param>
-        public Document()
+        public Document(string p = "New Document.ctf")
         {
-            Objects = new List<UIObject>();
+            Content = new List<UIObject>();
 
-            LastObjectId = 0;
-            FocusedObjectId = -1;
-            isSelected = false;
+            Path = p;
+            Name = path;
+            LastID = 0;
+            Focused = -1;
         }
 
-        public Document(string path)
-            : base()
+        /// <summary>
+        /// Get a representation string of the document
+        /// </summary>
+        /// <returns>Formated name and path</returns>
+        public override string ToString()
         {
-            Path = path;
+            return string.Format("{0} - {1}", name, path);
         }
-        #endregion
 
-        #region Accessors
-
-        public string Path
+        public string Name
         {
             get
             {
-                return this.path;
+                return name;
             }
 
-            set
+            //Set name with a splited path 
+            private set
             {
-                this.path = value;
-                //Set every document's UIObject when the path is set
-                ParseFromXML();
-            }
-        }
-
-        public string ShortPath
-        {
-            get
-            {
-                if (null != path)
-                   return this.path.Split('\\')[this.path.Split('\\').Length - 1]; 
-                
-                return null;
-            }
-        }
-
-        public string Text
-        {
-            get
-            {
-                return text;
-            }
-
-            set
-            {
-                text = value;
+                name = value.Split('\\')[value.Split('\\').Length - 1];
                 //For WPF binding
-                RaisePropertyChanged("Text");
+                RaisePropertyChanged("Name");
             }
         }
 
@@ -110,6 +81,21 @@ namespace Chartful.Model
             }
         }
 
+        public string Path
+        {
+            get
+            {
+                return path;
+            }
+
+            // Set every document's UIObject when the path is set
+            set
+            {
+                path = value;
+                ParseFromXML();
+            }
+        }
+
         /// <summary>
         /// return BBCode link
         /// </summary>
@@ -117,7 +103,7 @@ namespace Chartful.Model
         {
             get
             {
-                return string.Format("[url={0}][b]{1}[/b] - {0}[/url]", path, Name);
+                return string.Format("[url={0}][b]{1}[/b] - {0}[/url]", path, name);
             }
         }
 
@@ -131,23 +117,12 @@ namespace Chartful.Model
 
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
-        #endregion
-
-        #region Parsors
-        /// <summary>
-        /// Get a representation string of the document
-        /// </summary>
-        /// <returns>Formated name and path</returns>
-        public override string ToString()
-        {
-            return string.Format("{0} - {1}", Name, path);
-        }
 
         /// <summary>
         /// Write the document in a .ctf files
         /// </summary>
         public void ParseToXML()
-        {
+        {/*
             try
             {
                 XmlTextWriter myXmlTextWriter = new XmlTextWriter(this.path, System.Text.Encoding.UTF8);
@@ -155,7 +130,7 @@ namespace Chartful.Model
                 myXmlTextWriter.WriteStartDocument(false);
 
                 myXmlTextWriter.WriteStartElement("Objects", null);
-                foreach (UIObject o in Objects)
+                foreach (UIObject o in Content)
                 {
                     // écrire dans le fichier 
                     myXmlTextWriter.WriteStartElement("Object", null);
@@ -173,7 +148,9 @@ namespace Chartful.Model
             catch (Exception e)
             {
                 Console.WriteLine(e);
-            }
+            }*/
+
+
         }
 
         /// <summary>
@@ -201,9 +178,9 @@ namespace Chartful.Model
                     _left = obj.Attribute("Left").Value;
 
                     UIObject cxml = new UIObject(_id, _text,_type, _fontsize, _top, _left);
-                    Objects.Add(cxml);
+                    Content.Add(cxml);
 
-                    LastObjectId++;
+                    LastID++;
                 }
             }
             catch (Exception e)
@@ -222,7 +199,7 @@ namespace Chartful.Model
             html_content = html_content + "<div style=”Width:596px; Height : 896px; Margin:0; Padding:0; Background:#ffffff; border:solid #999999 1px;font-family:arial; font-size:12px; color:#333333””>";
             try
             {
-                foreach (UIObject o in Objects)
+                foreach (UIObject o in Content)
                 {
                     if (o.UIType == "Image")
                     {
@@ -246,18 +223,39 @@ namespace Chartful.Model
                 return "";
             }
         }
-        #endregion
 
-        #region Content Management
-        public void Update(TextBox textBox)
+        /// <summary>
+        /// Update the object in the document
+        /// </summary>
+        /// <param name="o"></param>
+        public void UpdateUIObject(UIObject o)
         {
-            this.Text = textBox.Text;
+            int i = FindUIObject(o.ID);
+
+            if (-1 < i)
+            {
+                Content[i] = o;
+
+                //Rewrite the file
+                ParseToXML();
+                RaisePropertyChanged("Name");
+            }
+            else
+            {
+                Content.Add(o);
+            }
         }
 
-        public void Update(Data data)
+        /// <summary>
+        /// Find an ObjetUI's position  
+        /// </summary>
+        /// <param name="id">ObjectUI's ID</param>
+        /// <returns>ObjectUI's index or -1 if not found</returns>
+        public int FindUIObject(string id)
         {
-            this.Text = data.Value;
+            for (int i = 0; i < Content.Count; i++)
+                if (Content[i].ID == id) return i;
+            return -1;
         }
-        #endregion
     }
 }

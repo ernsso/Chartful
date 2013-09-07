@@ -1,8 +1,23 @@
-﻿using Chartful.BLL;
-using Chartful.BLL.p2p;
-using Chartful.Model;
-using Chartful.Pages;
+﻿using Chartful.Model;
+using FirstFloor.ModernUI.Presentation;
 using FirstFloor.ModernUI.Windows.Controls;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using Chartful.BLL.p2p;
+using Chartful.BLL;
+using Chartful.Pages;
 
 namespace Chartful
 {
@@ -14,7 +29,7 @@ namespace Chartful
     {
         public static MainWindow Current { get; private set; } 
         public PeerChannel MyPeerChannel { get; set; }
-        public Manager DocumentsManager { get; private set; }
+        public Manager DocManager { get; private set; }
 
         public Workspace Editor { get; set; }
 
@@ -22,9 +37,9 @@ namespace Chartful
         {
             Current = this;
 
-            DocumentsManager = new Manager();
+            DocManager = new Manager();
             MyPeerChannel = new PeerChannel();
-            PeerChannel.myUpdateDelegate = new UpdateDelegate(this.Receive);
+            PeerChannel.myUpdateDelegate = new UpdateDelegate(this.Refresh);
 
             InitializeComponent();
         }
@@ -34,9 +49,13 @@ namespace Chartful
         /// Mise à jour de l'affichage à la reception de données
         /// </summary>
         /// <param name="o"></param>
-        public void Receive(Data data)
+        public void Refresh(UIObject o)
         {
-            this.DocumentsManager.Set(data);
+            //MessageBox.Show(o.ID + " : " + o.Content);
+            DocManager.Selected.UpdateUIObject(o);
+
+            if (null != Editor)
+                Editor.SetUIObject();
         }
     }
 }

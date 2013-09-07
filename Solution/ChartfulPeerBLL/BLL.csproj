@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data.cs" />
     <Compile Include="PeerReceiver.cs" />
     <Compile Include="PeerChannel.cs" />
     <Compile Include="IChartful.cs" />
