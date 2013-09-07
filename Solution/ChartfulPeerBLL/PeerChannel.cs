@@ -7,7 +7,7 @@ using System.ServiceModel;
 
 namespace Chartful.BLL.p2p
 {
-    public delegate void UpdateDelegate(UIObject data);
+    public delegate void UpdateDelegate(Data data);
     public delegate void testDelegate(string data);
 
     public class PeerChannel
@@ -46,19 +46,22 @@ namespace Chartful.BLL.p2p
 
         ~PeerChannel()
         {
-            broadcastChannel.Dispose();
-            factory.Close();
-            serviceHost.Close();
+            if (null != broadcastChannel)
+                broadcastChannel.Dispose();
+            if (null != factory)
+                factory.Close();
+            if (null != serviceHost)
+                serviceHost.Close();
         }
 
-        public void Send(UIObject data)
+        public void Send(Data data)
         {
-            broadcastChannel.sendUIObject(data);
+            broadcastChannel.Send(data);
         }
 
         public void Send(string data)
         {
-            broadcastChannel.sendString(data);
+            broadcastChannel.Send(data);
         }
 
 

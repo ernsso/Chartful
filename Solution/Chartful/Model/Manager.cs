@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Chartful.BLL;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,11 +14,14 @@ namespace Chartful.Model
     {
         public ObservableCollection<Document> Documents { get; private set; }
 
+        #region Constructors
         public Manager()
         {
             Documents = new ObservableCollection<Document>();
         }
+        #endregion
 
+        #region Document Management
         /// <summary>
         /// Set to Selected the Document 
         /// </summary>
@@ -56,6 +60,25 @@ namespace Chartful.Model
             }
         }
 
+        public void Set(Data data)
+        {
+            var document = Find(data.DocumentID);
+
+            if(null != document)
+                document.Update(data);
+        }
+
+        public WebDocument Find(string documentId)
+        {
+            foreach (WebDocument d in Documents)
+                if (d.Id == documentId)
+                    return d;
+
+            return null;
+        }
+        #endregion
+
+        #region File Management
         /// <summary>
         /// Open an existing file
         /// </summary>
@@ -77,6 +100,13 @@ namespace Chartful.Model
             }
 
             return result == true ? true : false;
+        }
+
+        public bool OpenFile(string webFileName)
+        {
+            Documents.Add(new WebDocument(webFileName));
+            
+            return true;
         }
 
         /// <summary>
@@ -105,5 +135,6 @@ namespace Chartful.Model
 
             return result == true ? true : false;
         }
+        #endregion
     }
 }

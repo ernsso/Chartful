@@ -21,9 +21,17 @@ namespace Chartful.Pages
     /// </summary>
     public partial class LogIn : UserControl
     {
+        MainWindow mainWindow;
+
         public LogIn()
         {
             InitializeComponent();
+            mainWindow = Application.Current.MainWindow as MainWindow;
+        }
+
+        private void SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.DocumentsManager.OpenFile(this.DocumentId.Text);
         }
     }
 }

@@ -55,7 +55,7 @@ namespace Chartful.Pages
         private void open_Click(object sender, RoutedEventArgs e)
         {
             var wnd = Application.Current.MainWindow as MainWindow;
-            bool opened = wnd.DocManager.OpenFile();
+            bool opened = wnd.DocumentsManager.OpenFile();
 
             if (opened)
                 NavigationCommands.GoToPage.Execute("/Pages/Workspace.xaml", null);
@@ -69,7 +69,7 @@ namespace Chartful.Pages
         private void new_Click(object sender, RoutedEventArgs e)
         {    
             var wnd = Application.Current.MainWindow as MainWindow;
-            bool created = wnd.DocManager.NewFile();
+            bool created = wnd.DocumentsManager.NewFile();
 
             if(created)
                 NavigationCommands.GoToPage.Execute("/Pages/Workspace.xaml", null);
@@ -81,8 +81,8 @@ namespace Chartful.Pages
             var doc = new Document(path);
 
             var wnd = Application.Current.MainWindow as MainWindow;
-            wnd.DocManager.Documents.Add(doc);
-            wnd.DocManager.SelectLastDocument();
+            wnd.DocumentsManager.Documents.Add(doc);
+            wnd.DocumentsManager.SelectLastDocument();
             
             NavigationCommands.GoToPage.Execute("/Pages/Workspace.xaml", null);
         }

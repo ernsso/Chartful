@@ -6,8 +6,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             MinWidth="900"
-             Loaded="UserControl_Loaded">
+             MinWidth="900">
     
     <UserControl.Resources>
         <Style x:Key="ListText" 
@@ -62,43 +61,10 @@
                     </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="2" BorderThickness="1" Width="596"  Height="842" BorderBrush="#333333" Background="White">
-                        <Ctrl:DragCanvas x:Name="dragCanvas"
-                                    Background="white"
-                                    AllowDrop="True" 
-                                    Drop="receiver_Drop"
-                                    MouseLeave="dragCanvas_MouseLeave">
-                        </Ctrl:DragCanvas>
+                        <TextBox Name="TextContent" 
+                                 AcceptsReturn="True" 
+                                 AcceptsTab="True" />
                     </Border>
-
-                    <StackPanel Grid.Column="5">
-                        <StackPanel Name="controls">
-                            <TextBlock Style="{StaticResource Heading2}" Text="Tools"/>
-                            <Label Name="data1"
-                               Foreground="#666666"
-                               FontSize="16"
-                               MouseMove="pickData_MouseMove" >
-                                <WrapPanel>
-                                    <Ellipse Height="5" Width="5" Fill="DarkGray"/>
-                                    <TextBlock Text="Title"/>
-                                </WrapPanel>
-                            </Label>
-                        </StackPanel>
-
-                        <StackPanel Margin="0, 25, 0, 0">
-                            <TextBlock Style="{StaticResource Heading2}" Text="Properties" Margin="0, 0, 0, 5"/>
-
-                            <ComboBox ItemsSource="{Binding Selected.Content}" Name="UIObjectList" SelectionChanged="UIObjectList_SelectionChanged"/>
-
-                            <TextBlock Text="Content"
-                                       Foreground="#666666"
-                                       FontSize="15"/>
-                            <TextBox Name="ContentPropertyBox" TextChanged="ContentPropertyBox_TextChanged" />
-                        </StackPanel>
-                    </StackPanel>
-
-                    <StackPanel Name="StatusContent" >
-                        <TextBlock Name="Position"/>
-                    </StackPanel>
                 </Grid>
             </StackPanel>
         </ScrollViewer>
