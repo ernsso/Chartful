@@ -127,7 +127,7 @@
     </Page>
     <Compile Include="Model\Document.cs" />
     <Compile Include="Model\Manager.cs" />
-    <Compile Include="Model\WebDocument.cs" />
+    <Compile Include="Model\Object.cs" />
     <Compile Include="Pages\Editor.xaml.cs">
       <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>

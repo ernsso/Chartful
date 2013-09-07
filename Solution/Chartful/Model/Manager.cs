@@ -33,7 +33,6 @@ namespace Chartful.Model
                     d.IsSelected = true;
                 else
                     d.IsSelected = false;
-
         }
 
         /// <summary>
@@ -56,7 +55,10 @@ namespace Chartful.Model
                     if (d.IsSelected)
                         return d;
 
-                return null;
+                this.Documents.Add(new Document());
+                SelectLastDocument();
+
+                return this.Selected;
             }
         }
 
@@ -68,10 +70,10 @@ namespace Chartful.Model
                 document.Update(data);
         }
 
-        public WebDocument Find(string documentId)
+        public Document Find(string documentName)
         {
-            foreach (WebDocument d in Documents)
-                if (d.Id == documentId)
+            foreach (Document d in Documents)
+                if (d.Name == documentName)
                     return d;
 
             return null;
@@ -102,9 +104,11 @@ namespace Chartful.Model
             return result == true ? true : false;
         }
 
-        public bool OpenFile(string webFileName)
+        public bool OpenFile(string fileName)
         {
-            Documents.Add(new WebDocument(webFileName));
+            this.Documents.Add(new Document());
+            this.SelectLastDocument();
+            Selected.Name = fileName;
             
             return true;
         }
@@ -134,6 +138,24 @@ namespace Chartful.Model
             }
 
             return result == true ? true : false;
+        }
+
+        public string SelectPath()
+        {
+            
+            var sfd = new SaveFileDialog();
+            sfd.InitialDirectory = "c:\\";
+            sfd.Filter = "Chartful files (*.ctf)|*.ctf|All files (*.*)|*.*";
+            sfd.FileName = "New Document"; // Default file name
+            sfd.DefaultExt = ".ctf";
+
+            Nullable<bool> result = sfd.ShowDialog();
+
+            // Process open file dialog box results
+            if (result == true)
+                return sfd.FileName;
+
+            return null;
         }
         #endregion
     }

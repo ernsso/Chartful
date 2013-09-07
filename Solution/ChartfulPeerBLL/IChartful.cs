@@ -12,10 +12,10 @@ namespace Chartful.BLL.p2p
     public interface IChartful
     {
         [OperationContract(IsOneWay = true)]
-        void Send(Data data);
+        void SendData(Data data);
 
         [OperationContract(IsOneWay = true)]
-        void Send(string data);
+        void SendString(string data);
     }
 
     public interface IChartfulChannel : IChartful, IClientChannel

@@ -18,9 +18,5 @@ namespace Chartful
 
         [DataMember]
         public string Value { get; set; }
-
-        [DataMember]
-        public DateTime ModifyDate { get; set; }
-
     }
 }

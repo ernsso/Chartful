@@ -31,7 +31,12 @@ namespace Chartful.Pages
 
         private void SignIn_Click(object sender, RoutedEventArgs e)
         {
-            mainWindow.DocumentsManager.OpenFile(this.DocumentId.Text);
+            if (!string.IsNullOrEmpty(this.DocumentId.Text))
+            {
+                mainWindow.DocumentsManager.OpenFile(this.DocumentId.Text);
+
+                NavigationCommands.GoToPage.Execute("/Pages/Workspace.xaml", null);
+            }
         }
     }
 }

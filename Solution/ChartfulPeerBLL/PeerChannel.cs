@@ -54,14 +54,14 @@ namespace Chartful.BLL.p2p
                 serviceHost.Close();
         }
 
-        public void Send(Data data)
+        public void SendData(Data data)
         {
-            broadcastChannel.Send(data);
+            broadcastChannel.SendData(data);
         }
 
-        public void Send(string data)
+        public void SendString(string data)
         {
-            broadcastChannel.Send(data);
+            broadcastChannel.SendString(data);
         }
 
 

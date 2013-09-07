@@ -19,7 +19,10 @@ namespace Chartful.Model
         // for wpf binding
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public string Name { get; set; }
+
         string path;
+        string text;
 
         bool isSelected;
 
@@ -66,11 +69,29 @@ namespace Chartful.Model
             }
         }
 
-        public string Name
+        public string ShortPath
         {
             get
             {
-                return this.path.Split('\\')[this.path.Split('\\').Length - 1]; ;
+                if (null != path)
+                   return this.path.Split('\\')[this.path.Split('\\').Length - 1]; 
+                
+                return null;
+            }
+        }
+
+        public string Text
+        {
+            get
+            {
+                return text;
+            }
+
+            set
+            {
+                text = value;
+                //For WPF binding
+                RaisePropertyChanged("Text");
             }
         }
 
@@ -228,6 +249,15 @@ namespace Chartful.Model
         #endregion
 
         #region Content Management
+        public void Update(TextBox textBox)
+        {
+            this.Text = textBox.Text;
+        }
+
+        public void Update(Data data)
+        {
+            this.Text = data.Value;
+        }
         #endregion
     }
 }
