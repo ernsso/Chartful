@@ -272,6 +272,12 @@ namespace Chartful.Model
 
         public void Update(Data data)
         {
+            if (this.Text != data.Value)
+                this.Text = data.Value;
+        }
+
+        public void Update2(Data data)
+        {
             //Test
             int i;
             string diff = data.Value;

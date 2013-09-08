@@ -71,6 +71,7 @@ namespace Chartful.Pages
 
                 //diff entre l'ancien et le nouveau text
                 var diff = Diff(textOld, this.TextContent.Text);
+                diff = this.TextContent.Text; 
 
                 var data = new Data()
                     {
