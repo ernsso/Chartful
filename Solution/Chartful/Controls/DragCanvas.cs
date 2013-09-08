@@ -1,4 +1,5 @@
 ﻿using Chartful.Net;
+using Chartful.Model;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

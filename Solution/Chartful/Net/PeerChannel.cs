@@ -23,15 +23,16 @@ namespace Chartful.Net.P2P
         {
             try
             {
-                serviceHost = new ServiceHost(typeof(PeerReceiver));
-                // Open the ServiceHostBase to create listeners and start listening for messages.
-                serviceHost.Open();
+                broadcastChannel = MeshManager.Instance.SignInMesh();
+                //serviceHost = new ServiceHost(typeof(PeerReceiver));
+                //// Open the ServiceHostBase to create listeners and start listening for messages.
+                //serviceHost.Open();
 
-                EndpointAddress lookFor = new EndpointAddress(serviceHost.BaseAddresses[0].ToString() + "broadcast");
+                //EndpointAddress lookFor = new EndpointAddress(serviceHost.BaseAddresses[0].ToString() + "broadcast");
 
-                factory = new ChannelFactory<IChartfulChannel>("BroadcastEndpoint", lookFor);
+                //factory = new ChannelFactory<IChartfulChannel>("BroadcastEndpoint", lookFor);
 
-                broadcastChannel = factory.CreateChannel();
+                //broadcastChannel = factory.CreateChannel();
 
                 //IOnlineStatus ostat = broadcastChannel.GetProperty<IOnlineStatus>();
                 //ostat.Online += new EventHandler(OnOnline);

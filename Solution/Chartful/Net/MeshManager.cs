@@ -32,6 +32,7 @@ namespace Chartful.Net.P2P
         {
             this.serviceHostDictionary = new Dictionary<string, ServiceHost>();
             this.chartfulChannelDictionary = new Dictionary<string, IChartfulChannel>();
+            this.channelFactoryDictionary = new Dictionary<string, ChannelFactory<IChartfulChannel>>();
         }
 
         ~MeshManager()
