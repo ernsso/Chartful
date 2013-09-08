@@ -54,33 +54,47 @@ namespace Chartful.Pages
             }
 
             this.Selected = mainWindow.DocumentsManager.Selected;
+            this.Selected.Caret = 0;
         }
         #endregion
 
         #region Events
         private void TextContent_Changed(object sender, TextChangedEventArgs e)
         {
+            int nbcar = -1;
             //On fait un update
             //this.Selected.Update(sender as TextBox);
               
             if (null != this.Selected.Name)
             {
                 var document = this.Selected;
+
+                //diff entre l'ancien et le nouveau text
+                var diff = Diff(textOld, this.TextContent.Text);
+
                 var data = new Data()
                     {
                         Id = DateTime.Now.ToString("HHmmssfff"),
                         DocumentName = document.Name,
                         UserId = this.mainWindow.DocumentsManager.UserId,
                         PropertyName = "Text",
-                        //diff entre l'ancien et le nouveau text
-                        Value = Diff(textOld,this.TextContent.Text)
+                        Value = diff
                     };
 
                 mainWindow.MyPeerChannel.SendData(data);
+
+                string[] modif = diff.Split(new Char[] { '+', '-' });
+                if(nbcar > -1)
+                    nbcar = int.Parse(modif[0]);
             }
 
             //On enregistre les modifications   
             this.textOld = this.TextContent.Text;
+        }
+
+        private void TextContent_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.Selected.Caret = this.TextContent.CaretIndex;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)

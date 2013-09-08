@@ -85,8 +85,10 @@
                         <TextBox Name="TextContent" 
                                  AcceptsReturn="True" 
                                  AcceptsTab="True"
+                                 TextWrapping="Wrap"
                                  Text="{Binding Selected.Text, Mode=TwoWay}"
-                                 TextChanged="TextContent_Changed"/>
+                                 TextChanged="TextContent_Changed"
+                                 MouseLeftButtonUp="TextContent_MouseLeftButtonUp"/>
                     </Border>
                 </Grid>
             </StackPanel>

@@ -21,6 +21,7 @@ namespace Chartful.Model
         public event PropertyChangedEventHandler PropertyChanged;
 
         public string Name { get; set; }
+        public int Caret { get; set; }
 
         string path;
         string text = "";
@@ -46,6 +47,8 @@ namespace Chartful.Model
             LastObjectId = 0;
             FocusedObjectId = -1;
             isSelected = false;
+
+            Caret = 0;
         }
 
         public Document(string path)
@@ -269,6 +272,7 @@ namespace Chartful.Model
 
         public void Update(Data data)
         {
+            //Test
             int i;
             string diff = data.Value;
 
@@ -296,10 +300,12 @@ namespace Chartful.Model
                 if (diff[i].ToString() == "+")
                 {
                     this.Text = this.Text.Insert(nbcar, newtext);
+                    this.Caret += nbcar;
                 }
                 else
                 {
                     this.Text = this.Text.Remove(nbcar - int.Parse(modif[1]), int.Parse(modif[1]));
+                    this.Caret -= nbcar;
                 }
             }
             logs.Add(data);
