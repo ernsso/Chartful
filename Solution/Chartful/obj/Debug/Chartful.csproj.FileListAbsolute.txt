@@ -1,0 +1,243 @@
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\bin\Debug\Chartful.exe
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\bin\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\MainWindow.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Content\About.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Content\SettingsAppearance.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Home.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\LogIn.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Settings.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Workspace.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\App.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\MainWindow.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Content\About.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Content\SettingsAppearance.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Home.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\LogIn.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Settings.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Workspace.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\App.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Chartful_MarkupCompile.cache
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Chartful.g.resources
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Chartful.exe
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Starting.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Starting.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Chartful_MarkupCompile.lref
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Editor.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Pages\Editor.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Controls\MenuList.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Controls\MenuList.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Controls\TextItemList.baml
+C:\Users\Loïc\Documents\ESGI\Master 1\Projet annuel\Chartful\Chartful\obj\Debug\Controls\TextItemList.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\TextItemList.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\MainWindow.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\About.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\SettingsAppearance.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Editor.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Home.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\LogIn.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Settings.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\App.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\MenuList.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\TextItemList.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\MainWindow.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\About.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\SettingsAppearance.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Editor.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Home.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\LogIn.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Settings.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Starting.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Workspace.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\App.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.cache
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.lref
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\MenuList.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Starting.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Workspace.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.g.resources
+C:\Users\Marine\Documents\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Marine\Documents\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.baml
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe.config
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.pdb
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\TextItemList.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\MainWindow.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\About.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\SettingsAppearance.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Editor.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Home.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\LogIn.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Settings.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\App.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\MenuList.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\TextItemList.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\MainWindow.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\About.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\SettingsAppearance.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Editor.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Home.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\LogIn.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Settings.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Starting.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Workspace.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\App.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.cache
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.lref
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\MenuList.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Starting.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Workspace.baml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.g.resources
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe.config
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\bin\Debug\Chartful.exe.config
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\bin\Debug\Chartful.exe
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\bin\Debug\Chartful.pdb
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Controls\TextItemList.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\MainWindow.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Content\About.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Content\SettingsAppearance.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Editor.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Home.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\LogIn.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Settings.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\App.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Controls\MenuList.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Controls\TextItemList.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\MainWindow.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Content\About.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Content\SettingsAppearance.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Editor.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Home.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\LogIn.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Settings.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Starting.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Workspace.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\App.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.cache
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.lref
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Controls\MenuList.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Properties.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Starting.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Pages\Workspace.baml
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful\Solution\Chartful\obj\Debug\Chartful.g.resources
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful_old\Solution\Chartful\bin\Debug\Chartful.exe.config
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful_old\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful_old\Solution\Chartful\obj\Debug\Chartful.pdb
+D:\Solution\Chartful\bin\Debug\Chartful.exe.config
+D:\Solution\Chartful\obj\Debug\Chartful.exe
+D:\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\bin\Debug\Chartful.exe.config
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\bin\Debug\Chartful.exe
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\bin\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Controls\TextItemList.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\MainWindow.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Content\About.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Content\SettingsAppearance.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Editor.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Home.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\LogIn.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Settings.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\App.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Controls\MenuList.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Controls\TextItemList.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\MainWindow.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Content\About.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Content\SettingsAppearance.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Editor.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Home.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\LogIn.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Properties.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Settings.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Starting.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Workspace.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\App.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.cache
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.lref
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Controls\MenuList.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Properties.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Starting.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Pages\Workspace.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\Chartful\obj\Debug\Chartful.g.resources
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\bin\Debug\Chartful.exe.config
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Chartful.exe
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\bin\Debug\Chartful.exe
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\bin\Debug\Chartful.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.dll
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Controls\TextItemList.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\MainWindow.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Content\About.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Content\SettingsAppearance.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Editor.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Home.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\LogIn.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Settings.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\App.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Controls\MenuList.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Controls\TextItemList.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\MainWindow.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Content\About.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Content\SettingsAppearance.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Editor.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Home.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\LogIn.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Properties.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Settings.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Starting.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Workspace.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\App.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.cache
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Chartful_MarkupCompile.lref
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Controls\MenuList.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Properties.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Starting.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Pages\Workspace.baml
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Chartful\obj\Debug\Chartful.g.resources
