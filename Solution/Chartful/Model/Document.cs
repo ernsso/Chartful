@@ -272,8 +272,16 @@ namespace Chartful.Model
 
         public void Update(Data data)
         {
-            if (this.Text != data.Value)
-                this.Text = data.Value;
+            if (this.isSelected)
+            {
+                if (this.Text != data.Value)
+                    this.Text = data.Value;
+                this.logs.Add(data);
+            }
+            else
+            {
+                this.text = data.Value;
+            }
         }
 
         public void Update2(Data data)
@@ -315,6 +323,18 @@ namespace Chartful.Model
                 }
             }
             logs.Add(data);
+        }
+
+        public bool HasBeenUpdated(string text)
+        {
+            foreach (var log in logs)
+                if (log.Value == text)
+                {
+                    logs.Remove(log);
+                    return true;
+                }
+
+            return false;
         }
         #endregion
     }

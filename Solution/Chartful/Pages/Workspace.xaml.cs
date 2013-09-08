@@ -62,10 +62,8 @@ namespace Chartful.Pages
         private void TextContent_Changed(object sender, TextChangedEventArgs e)
         {
             int nbcar = -1;
-            //On fait un update
-            //this.Selected.Update(sender as TextBox);
-              
-            if (null != this.Selected.Name)
+                          
+            if (null != this.Selected.Name && !this.Selected.HasBeenUpdated(this.TextContent.Text))
             {
                 var document = this.Selected;
 
