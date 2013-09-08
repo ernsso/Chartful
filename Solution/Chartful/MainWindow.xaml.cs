@@ -39,7 +39,8 @@ namespace Chartful
         /// <param name="data"></param>
         public void DataReceiver(Data data)
         {
-            this.DocumentsManager.Set(data);
+            if (data.UserId != this.DocumentsManager.UserId)
+                this.DocumentsManager.Set(data);
         }
 
         public void StringReceiver(string data)

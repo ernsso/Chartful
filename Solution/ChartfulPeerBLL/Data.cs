@@ -11,7 +11,13 @@ namespace Chartful.BLL.p2p
     public class Data
     {
         [DataMember]
+        public string Id { get; set; }
+
+        [DataMember]
         public string DocumentName { get; set; }
+
+        [DataMember]
+        public string UserId { get; set; }
 
         [DataMember]
         public string PropertyName { get; set; }

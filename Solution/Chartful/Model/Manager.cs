@@ -16,11 +16,15 @@ namespace Chartful.Model
         public ObservableCollection<Document> Documents { get; private set; }
         public List<string> SharedDocumentsNames { get; set; }
 
+        public string UserId { get; private set; }
+
         #region Constructors
         public Manager()
         {
             this.Documents = new ObservableCollection<Document>();
             this.SharedDocumentsNames = new List<string>();
+
+            this.UserId = DateTime.Now.ToString("HHmmssfff");
         }
         #endregion
 

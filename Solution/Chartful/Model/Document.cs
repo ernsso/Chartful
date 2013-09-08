@@ -23,15 +23,16 @@ namespace Chartful.Model
         public string Name { get; set; }
 
         string path;
-        string text;
+        string text = "";
 
         bool isSelected;
 
         public List<UIObject> Objects { get; set; }
+        List<Data> logs;
 
         public int LastObjectId { get; set; }
         public int FocusedObjectId { get; set; }
-
+        
         #region Constructors
         /// <summary>
         /// New document
@@ -40,6 +41,7 @@ namespace Chartful.Model
         public Document()
         {
             Objects = new List<UIObject>();
+            logs = new List<Data>();
 
             LastObjectId = 0;
             FocusedObjectId = -1;
@@ -267,7 +269,40 @@ namespace Chartful.Model
 
         public void Update(Data data)
         {
-            this.Text = data.Value;
+            int i;
+            string diff = data.Value;
+
+            //Determine a quel caractere on peut determiner si l'on doit ajouter ou supprimer des caractères
+            for (i = 0; i < diff.Length; i++)
+            {
+                if (diff[i].ToString() == "+" || diff[i].ToString() == "-")
+                    break;
+            }
+
+            //Prend le nombre de caractères avant d'effecter l'opération
+            string[] modif = diff.Split(new Char[] { '+', '-' });
+            int nbcar = -1;
+            nbcar = int.Parse(modif[0]);
+
+            string newtext = "";
+            for (int c = i + 1; c < diff.Length; c++)
+            {
+                newtext = newtext + diff[c].ToString();
+            }
+
+            //Défini en fonction de l'opérateur le texte a retourner
+            if (nbcar >= 0)
+            {
+                if (diff[i].ToString() == "+")
+                {
+                    this.Text = this.Text.Insert(nbcar, newtext);
+                }
+                else
+                {
+                    this.Text = this.Text.Remove(nbcar - int.Parse(modif[1]), int.Parse(modif[1]));
+                }
+            }
+            logs.Add(data);
         }
         #endregion
     }

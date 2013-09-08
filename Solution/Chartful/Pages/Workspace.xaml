@@ -6,7 +6,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             MinWidth="900">
+             MinWidth="900"
+             Loaded="OnLoad">
     
     <UserControl.Resources>
         <Style x:Key="ListText" 

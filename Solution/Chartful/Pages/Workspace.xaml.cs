@@ -3,6 +3,7 @@ using Chartful.BLL.p2p;
 using Chartful.Controls;
 using Chartful.Model;
 using FirstFloor.ModernUI.Windows.Controls;
+using System;
 using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,51 +24,63 @@ namespace Chartful.Pages
 
         public Document Selected { get; set; }
 
+        string textOld = "";
+
         #region Constructors
         public Workspace()
         {
             InitializeComponent();
             DataContext = this;
-            
+
             this.mainWindow = Application.Current.MainWindow as MainWindow;
             this.mainWindow.MyPeerChannel.SendString("-get docNames");
 
-            Selected = mainWindow.DocumentsManager.Selected;
-            
+            Refresh();
+        }
+
+        private void OnLoad(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void Refresh()
+        {
+            this.Selected = mainWindow.DocumentsManager.Selected;
+
             if (!string.IsNullOrEmpty(this.Selected.Name))
             {
                 this.DocumentName.Text = this.Selected.Name;
+                this.mainWindow.MyPeerChannel.SendString(string.Format("-get {0}", this.Selected.Name));
             }
+
+            this.Selected = mainWindow.DocumentsManager.Selected;
         }
         #endregion
 
+        #region Events
         private void TextContent_Changed(object sender, TextChangedEventArgs e)
         {
-            this.Selected.Update(sender as TextBox);
-
-            //var value = GetModification(sender as TextBox);
-            //this.Selected.Update(value);
+            //On fait un update
+            //this.Selected.Update(sender as TextBox);
+              
             if (null != this.Selected.Name)
             {
                 var document = this.Selected;
                 var data = new Data()
                     {
+                        Id = DateTime.Now.ToString("HHmmssfff"),
                         DocumentName = document.Name,
+                        UserId = this.mainWindow.DocumentsManager.UserId,
                         PropertyName = "Text",
-                        Value = this.TextContent.Text
+                        //diff entre l'ancien et le nouveau text
+                        Value = Diff(textOld,this.TextContent.Text)
                     };
 
                 mainWindow.MyPeerChannel.SendData(data);
             }
-        }
 
-        /// <summary>
-        /// Get the diffrence between the TextBox and the document 
-        /// </summary>
-        /// <returns></returns>
-        private string GetModification(TextBox textBox)
-        {
-            return null;
+            //On enregistre les modifications   
+            this.textOld = this.TextContent.Text;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -125,6 +138,64 @@ namespace Chartful.Pages
             }
 
             this.Share.IsEnabled = true;
+        }
+        #endregion
+
+        string Diff(string first, string second)
+        {
+            string min = first;
+            string max = second;
+            if (second.Length < first.Length)
+            {
+                min = second;
+                max = first;
+            }
+
+
+            int c = 1;
+            int d = 1;
+            d = max.Length - min.Length;
+
+
+            if (first.Length == 0)
+            {
+                return "0+" + max;
+            }
+            else
+            {
+                for (int i = 0; i < min.Length; i++)
+                {
+                    char _first = first[i];
+                    char _second = second[i];
+
+
+                    if (_second != _first)
+                    {
+                        if (second.Length > first.Length)
+                        {
+                            string ca = "";
+                            for (int e = 0; e < d; e++)
+                                ca = ca + second[i + e];
+                            return i.ToString() + "+" + ca;
+                        }
+                        else
+                        {
+                            i = i + d;
+                            return i.ToString() + "-" + d;
+                        }
+                    }
+                    c = i + 1;
+                }
+                if (second.Equals(max))
+                {
+                    string ca = "";
+                    for (int e = 0; e < d; e++)
+                        ca = ca + second[c + e];
+                    return c.ToString() + "+" + ca;
+                }
+                else
+                    return max.Length.ToString() + "-" + d;
+            }
         }
     }
 }
