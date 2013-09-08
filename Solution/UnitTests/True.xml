@@ -1,5 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<Objects>
-  <Object Text="Image" Type="Image" Top="10" Left="100" FontSize="20"/>
-  <Object Text="HelloWorld" Type="Text" Top="100" Left="50" FontSize="20"/>
-</Objects>
