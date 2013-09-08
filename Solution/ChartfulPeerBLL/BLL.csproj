@@ -7,7 +7,7 @@
     <ProjectGuid>{B39AC127-1933-4736-BF1C-B367125CF7CB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Chartful</RootNamespace>
+    <RootNamespace>Chartful.Net</RootNamespace>
     <AssemblyName>ChartfulPeerBLL</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MeshManager.cs" />
     <Compile Include="PeerReceiver.cs" />
     <Compile Include="PeerChannel.cs" />
     <Compile Include="IChartful.cs" />

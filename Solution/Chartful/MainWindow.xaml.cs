@@ -15,8 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Chartful.BLL.p2p;
-using Chartful.BLL;
+using Chartful.Net.P2P;
+using Chartful.Net;
 using Chartful.Pages;
 
 namespace Chartful

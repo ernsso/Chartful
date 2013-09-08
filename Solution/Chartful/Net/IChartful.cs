@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using System.Runtime.Serialization;
+using Chartful.Model;
 
-namespace Chartful.Net.p2p
+namespace Chartful.Net.P2P
 {
     [ServiceContract(Namespace = "http://Chartful.Peer")]
     public interface IChartful

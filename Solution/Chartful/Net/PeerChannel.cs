@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using Chartful.Model;
 
-namespace Chartful.Net.p2p
+namespace Chartful.Net.P2P
 {
     public delegate void UpdateDelegate(UIObject data);
     public delegate void testDelegate(string data);
@@ -61,8 +62,13 @@ namespace Chartful.Net.p2p
             broadcastChannel.sendString(data);
         }
 
-
-        // PeerNode event handlers
+        #region PeerNode event handlers
+        
+        /// <summary>
+        /// Evenement se déclanchant lorsque la pair est connectée.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnOnline(object sender, EventArgs e)
         {
             Console.WriteLine(String.Format("The mesh is online !"));
@@ -70,9 +76,16 @@ namespace Chartful.Net.p2p
             //Console.WriteLine(sender.GetType());
         }
 
+        /// <summary>
+        /// Evenement se déclanchant lorsque la pair est connectée.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnOffline(object sender, EventArgs e)
         {
             Console.WriteLine(String.Format("The mesh is offline !"));
         }
+
+        #endregion
     }
 }
