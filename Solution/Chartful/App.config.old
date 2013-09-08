@@ -3,24 +3,35 @@
   <appSettings>
     <add key="baseAddress" value="net.p2p://ChartfulService/" />
   </appSettings>
-  <system.serviceModel>
+  <!--<system.serviceModel>
+    <services>
+      <service name="Chartful.Net.P2P.PeerReceiver">
+        <endpoint address="broadcast" binding="netPeerTcpBinding" bindingConfiguration="TchatBinding"
+          contract="Chartful.Net.P2P.IChartful" />
+        <host>
+          <baseAddresses>
+            <add baseAddress="net.p2p://broadcastmesh/ChartfulService/" />
+          </baseAddresses>
+        </host>
+      </service>
+    </services>
     <client>
-      <endpoint address="net.tcp://localhost:9000/Server/Service/"
-          binding="netTcpBinding" bindingConfiguration="NetTcpBinding_IChat"
-          contract="IChat" name="NetTcpBinding_IChat">
-        <identity>
-          <dns value="localhost" />
-        </identity>
+      <endpoint name="BroadcastEndpoint"
+                address="net.p2p://broadcastmesh/ChartfulService/broadcast"
+                binding="netPeerTcpBinding"
+                bindingConfiguration="TchatBinding"
+                contract="Chartful.Net.P2P.IChartful">
       </endpoint>
     </client>
 
-    <bindings> 
-            <!--Following is the expanded configuration section for a NetPeerTcpBinding.
+    <bindings>
+      --><!-- 
+            Following is the expanded configuration section for a NetPeerTcpBinding.
             Each property is configured with the default value, except for 
             peerNodeAuthenticationMode and port.
             See the security samples under Scenario\PeerChannel
-            to learn how to configure NetPeerTcpBinding for security.--> 
-            
+            to learn how to configure NetPeerTcpBinding for security. 
+            --><!--
       <netPeerTcpBinding>
         <binding name="TchatBinding"
                  port="0"
@@ -40,5 +51,5 @@
         </binding>
       </netPeerTcpBinding>
     </bindings>
-  </system.serviceModel>
+  </system.serviceModel>-->
 </configuration>
