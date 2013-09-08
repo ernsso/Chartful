@@ -272,43 +272,50 @@ namespace Chartful.Model
 
         public void Update(Data data)
         {
-            //Test
-            int i;
-            string diff = data.Value;
-
-            //Determine a quel caractere on peut determiner si l'on doit ajouter ou supprimer des caractères
-            for (i = 0; i < diff.Length; i++)
+            if (this.isSelected)
             {
-                if (diff[i].ToString() == "+" || diff[i].ToString() == "-")
-                    break;
-            }
+                //Test
+                int i;
+                string diff = data.Value;
 
-            //Prend le nombre de caractères avant d'effecter l'opération
-            string[] modif = diff.Split(new Char[] { '+', '-' });
-            int nbcar = -1;
-            nbcar = int.Parse(modif[0]);
-
-            string newtext = "";
-            for (int c = i + 1; c < diff.Length; c++)
-            {
-                newtext = newtext + diff[c].ToString();
-            }
-
-            //Défini en fonction de l'opérateur le texte a retourner
-            if (nbcar >= 0)
-            {
-                if (diff[i].ToString() == "+")
+                //Determine a quel caractere on peut determiner si l'on doit ajouter ou supprimer des caractères
+                for (i = 0; i < diff.Length; i++)
                 {
-                    this.Text = this.Text.Insert(nbcar, newtext);
-                    this.Caret += nbcar;
+                    if (diff[i].ToString() == "+" || diff[i].ToString() == "-")
+                        break;
                 }
-                else
+
+                //Prend le nombre de caractères avant d'effecter l'opération
+                string[] modif = diff.Split(new Char[] { '+', '-' });
+                int nbcar = -1;
+                nbcar = int.Parse(modif[0]);
+
+                string newtext = "";
+                for (int c = i + 1; c < diff.Length; c++)
                 {
-                    this.Text = this.Text.Remove(nbcar - int.Parse(modif[1]), int.Parse(modif[1]));
-                    this.Caret -= nbcar;
+                    newtext = newtext + diff[c].ToString();
                 }
+
+                //Défini en fonction de l'opérateur le texte a retourner
+                if (nbcar >= 0)
+                {
+                    if (diff[i].ToString() == "+")
+                    {
+                        this.Text = this.Text.Insert(nbcar, newtext);
+                        this.Caret += nbcar;
+                    }
+                    else
+                    {
+                        this.Text = this.Text.Remove(nbcar - int.Parse(modif[1]), int.Parse(modif[1]));
+                        this.Caret -= nbcar;
+                    }
+                }
+                logs.Add(data);
             }
-            logs.Add(data);
+            else
+            {
+                this.text = data.Value;
+            }
         }
         #endregion
     }

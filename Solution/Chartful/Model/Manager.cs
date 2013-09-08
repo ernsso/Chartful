@@ -36,10 +36,9 @@ namespace Chartful.Model
         public void SelectDocument(string name)
         {
             foreach (Document d in Documents)
-                if (d.Name == name)
-                    d.IsSelected = true;
-                else
-                    d.IsSelected = false;
+                d.IsSelected = false;
+
+            Documents.Last<Document>().IsSelected = true;
         }
 
         /// <summary>
@@ -119,10 +118,12 @@ namespace Chartful.Model
 
         public bool OpenFile(string fileName)
         {
+            this.Documents.Remove(Find(fileName));
+
             this.Documents.Add(new Document());
+            this.Documents.Last().Name = fileName;
             this.SelectLastDocument();
-            Selected.Name = fileName;
-            
+
             return true;
         }
 

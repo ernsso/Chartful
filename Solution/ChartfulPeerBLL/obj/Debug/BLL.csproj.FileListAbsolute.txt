@@ -26,3 +26,8 @@ C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\Char
 C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\ChartfulPeerBLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
 C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Marine\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb
+C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
