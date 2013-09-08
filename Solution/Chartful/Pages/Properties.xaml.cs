@@ -51,10 +51,10 @@ namespace Chartful.Pages
             var wnd = Application.Current.MainWindow as MainWindow;
 
             // Get all opened documents
-            Documents = wnd.DocManager.Documents;
+            Documents = wnd.DocumentsManager.Documents;
 
             // Get selected document
-            Selected = wnd.DocManager.Selected;
+            Selected = wnd.DocumentsManager.Selected;
 
             // Refresh Data Context
             DataContext = null;
@@ -69,7 +69,7 @@ namespace Chartful.Pages
         private void TextItemList_MouseClick(object sender, MouseButtonEventArgs e)
         {
             var wnd = Application.Current.MainWindow as MainWindow;
-            wnd.DocManager.SelectDocument(((TextItemList)sender).TextItem);
+            wnd.DocumentsManager.SelectDocument(((TextItemList)sender).TextItem);
             Refresh();
         }
     }

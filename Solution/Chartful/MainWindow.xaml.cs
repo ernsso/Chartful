@@ -1,23 +1,9 @@
-﻿using Chartful.Model;
-using FirstFloor.ModernUI.Presentation;
-using FirstFloor.ModernUI.Windows.Controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using Chartful.BLL;
 using Chartful.BLL.p2p;
-using Chartful.BLL;
+using Chartful.Model;
 using Chartful.Pages;
+using FirstFloor.ModernUI.Windows.Controls;
+using System.Collections.Generic;
 
 namespace Chartful
 {
@@ -29,7 +15,7 @@ namespace Chartful
     {
         public static MainWindow Current { get; private set; } 
         public PeerChannel MyPeerChannel { get; set; }
-        public Manager DocManager { get; private set; }
+        public Manager DocumentsManager { get; private set; }
 
         public Workspace Editor { get; set; }
 
@@ -37,25 +23,45 @@ namespace Chartful
         {
             Current = this;
 
-            DocManager = new Manager();
-            MyPeerChannel = new PeerChannel();
-            PeerChannel.myUpdateDelegate = new UpdateDelegate(this.Refresh);
+            this.DocumentsManager = new Manager();
+            this.MyPeerChannel = new PeerChannel();
+            PeerChannel.dataSenderDelegate = new DataSenderDelegate(this.DataReceiver);
+            PeerChannel.stringSenderDelegate = new StringSenderDelegate(this.StringReceiver);
+            PeerChannel.stringListSenderDelegate = new StringListSenderDelegate(this.StringListReceiver);
 
             InitializeComponent();
         }
 
 
         /// <summary>
-        /// Mise à jour de l'affichage à la reception de données
+        /// Data Recivers
         /// </summary>
-        /// <param name="o"></param>
-        public void Refresh(UIObject o)
+        /// <param name="data"></param>
+        public void DataReceiver(Data data)
         {
-            //MessageBox.Show(o.ID + " : " + o.Content);
-            DocManager.Selected.UpdateUIObject(o);
+            this.DocumentsManager.Set(data);
+        }
 
-            if (null != Editor)
-                Editor.SetUIObject();
+        public void StringReceiver(string data)
+        {
+            if ("-get docNames" == data)
+                this.MyPeerChannel.SendStringList(this.DocumentsManager.SharedDocumentsNames);
+            else
+            {
+                var command = data.Split(' ');
+
+                if ("-add" == command[0])
+                    this.DocumentsManager.SharedDocumentsNames.Add(command[1]);
+                else if ("-del" == command[0])
+                    this.DocumentsManager.SharedDocumentsNames.Remove(command[1]);
+            }
+        }
+
+        public void StringListReceiver(List<string> data)
+        {
+            foreach (var name in data)
+                if (!this.DocumentsManager.SharedDocumentsNames.Contains(name))
+                    this.DocumentsManager.SharedDocumentsNames.Add(name);
         }
     }
 }

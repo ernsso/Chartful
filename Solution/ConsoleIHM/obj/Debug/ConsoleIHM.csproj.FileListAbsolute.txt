@@ -1,0 +1,8 @@
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\obj\Debug\ConsoleIHM.csprojResolveAssemblyReference.cache
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\bin\Debug\ConsoleIHM.exe.config
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\bin\Debug\ConsoleIHM.exe
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\bin\Debug\ConsoleIHM.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\bin\Debug\ChartfulPeerBLL.dll
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\bin\Debug\ChartfulPeerBLL.pdb
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\obj\Debug\ConsoleIHM.exe
+C:\Users\Loïc\Documents\GitHub\ESGI\Master1\Annual Project\Solution\ConsoleIHM\obj\Debug\ConsoleIHM.pdb

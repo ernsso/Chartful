@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chartful
+namespace Chartful.BLL.p2p
 {
     [DataContract]
     public class Data
     {
         [DataMember]
-        public string DocumentID { get; set; }
+        public string DocumentName { get; set; }
 
         [DataMember]
         public string PropertyName { get; set; }

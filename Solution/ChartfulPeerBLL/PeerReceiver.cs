@@ -11,14 +11,19 @@ namespace Chartful.BLL.p2p
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.Single)]
     class PeerReceiver : IChartful
     {
-        public void sendUIObject(UIObject data)
+        public void SendData(Data data)
         {
-            PeerChannel.myUpdateDelegate.Invoke(data);
+            PeerChannel.dataSenderDelegate.Invoke(data);
         }
 
-        public void sendString(string data)
+        public void SendString(string data)
         {
-            PeerChannel.myTestDelegate.Invoke(data);
+            PeerChannel.stringSenderDelegate.Invoke(data);
+        }
+
+        public void SendStringList(List<string> data)
+        {
+            PeerChannel.stringListSenderDelegate.Invoke(data);
         }
     }
 }
