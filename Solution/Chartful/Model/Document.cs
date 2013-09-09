@@ -272,7 +272,7 @@ namespace Chartful.Model
 
         public void Update(Data data)
         {
-            if (this.isSelected)
+            if (this.isSelected && !String.IsNullOrEmpty(data.Value))
             {
                 //Test
                 int i;

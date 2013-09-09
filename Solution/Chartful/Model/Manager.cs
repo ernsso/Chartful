@@ -100,7 +100,7 @@ namespace Chartful.Model
         public bool OpenFile()
         {
             var ofd = new OpenFileDialog();
-            ofd.InitialDirectory = "c:\\";
+            ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
             ofd.Filter = "Chartful files (*.ctf)|*.ctf|All files (*.*)|*.*";
 
             Nullable<bool> result = ofd.ShowDialog();
@@ -134,7 +134,7 @@ namespace Chartful.Model
         public bool NewFile()
         {
             var sfd = new SaveFileDialog();
-            sfd.InitialDirectory = "c:\\";
+            sfd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); ;
             sfd.Filter = "Chartful files (*.ctf)|*.ctf|All files (*.*)|*.*";
             sfd.FileName = "New Document"; // Default file name
             sfd.DefaultExt = ".ctf";
