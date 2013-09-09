@@ -4,7 +4,6 @@ using Chartful.Model;
 using Chartful.Pages;
 using FirstFloor.ModernUI.Windows.Controls;
 using System.Collections.Generic;
-using System;
 
 namespace Chartful
 {
@@ -56,19 +55,6 @@ namespace Chartful
                     this.DocumentsManager.SharedDocumentsNames.Add(command[1]);
                 else if ("-del" == command[0])
                     this.DocumentsManager.SharedDocumentsNames.Remove(command[1]);
-                else if ("-get" == command[0])
-                {
-                    this.DocumentsManager.SelectDocument(command[1]);
-                    var d = new Data()
-                    {
-                        Id = DateTime.Now.ToString("hhmmssfff"),
-                        DocumentName = this.DocumentsManager.Selected.Name,
-                        UserId = this.DocumentsManager.UserId,
-                        PropertyName = "text",
-                        Value = this.DocumentsManager.Selected.Text
-                    };
-                    this.MyPeerChannel.SendData(d);
-                }
             }
         }
 

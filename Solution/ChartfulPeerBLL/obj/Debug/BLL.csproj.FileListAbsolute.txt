@@ -31,4 +31,3 @@ C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\C
 C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.dll
 C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\obj\Debug\ChartfulPeerBLL.pdb
 C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful-Lo-c\Solution\ChartfulPeerBLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
-C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\ChartfulPeerBLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache

@@ -56,7 +56,6 @@ namespace Chartful.Pages
         {
             var wnd = Application.Current.MainWindow as MainWindow;
             bool opened = wnd.DocumentsManager.OpenFile();
-            wnd.DocumentsManager.Selected.ParseFromXML();
 
             if (opened)
                 NavigationCommands.GoToPage.Execute("/Pages/Workspace.xaml", null);

@@ -36,9 +36,9 @@ namespace Chartful.BLL.p2p
 
                 broadcastChannel = factory.CreateChannel();
 
-                IOnlineStatus ostat = broadcastChannel.GetProperty<IOnlineStatus>();
-                ostat.Online += new EventHandler(OnOnline);
-                ostat.Offline += new EventHandler(OnOffline);
+                //IOnlineStatus ostat = broadcastChannel.GetProperty<IOnlineStatus>();
+                //ostat.Online += new EventHandler(OnOnline);
+                //ostat.Offline += new EventHandler(OnOffline);
 
                 broadcastChannel.Open();
             }
