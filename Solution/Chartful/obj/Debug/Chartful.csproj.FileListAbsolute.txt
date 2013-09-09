@@ -121,11 +121,12 @@ C:\Users\Ernsso\Documents\ESGI\4eme_annee\Projet annuel\Chartful_old\Solution\Ch
 D:\Solution\Chartful\bin\Debug\Chartful.exe.config
 D:\Solution\Chartful\obj\Debug\Chartful.exe
 D:\Solution\Chartful\obj\Debug\Chartful.pdb
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe.config
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.pdb
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.dll
-C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\Chartful.exe.config
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\bin\Debug\FirstFloor.ModernUI.xml
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Controls\TextItemList.baml
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\MainWindow.baml
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Content\About.baml
@@ -158,4 +159,3 @@ C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Pages\Work
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.g.resources
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.exe
 C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.pdb
-C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful\obj\Debug\Chartful.csprojResolveAssemblyReference.cache

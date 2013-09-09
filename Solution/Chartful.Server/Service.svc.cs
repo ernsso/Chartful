@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.PeerToPeer;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Chartful.Server.Bean;
+using Chartful.Server.DAO;
 
 namespace Chartful.Server
 {
@@ -12,22 +15,52 @@ namespace Chartful.Server
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez Service1.svc ou Service1.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class Service : IService
     {
-        public string GetData(int value)
+        #region IService Member
+
+        public bool SignUp(string username, string password, string email)
         {
-            return string.Format("You entered: {0}", value);
+            //Console.WriteLine("SignUp(\"{0}\", \"{0}\")");
+            bool success = false;
+            MemberDAO memberDao = MemberDAO.Instance;
+            Member member = memberDao.select(username);
+            if (member == null)
+            {
+                memberDao.create(username, password, email);
+                success = true;
+            }
+            return success;
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public bool SignIn(string username, string password)
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            //Console.WriteLine("LogIn(\"{0}\", \"{0}\")");
+            MemberDAO memberDao = MemberDAO.Instance;
+            Member member = memberDao.select(username);
+            return (member != null);
         }
+
+        public bool SignOut()
+        {
+            //Console.WriteLine("LogOut()");
+            return true;
+        }
+
+        public List<string> GetFileNameList()
+        {
+            //Console.WriteLine("GetFileNameList()");
+            FileDAO f = FileDAO.Instance;
+            List<string> fileNameList = new List<string>();
+            foreach (File file in f.select())
+                fileNameList.Add(file.Name);
+            return fileNameList;
+        }
+
+        public List<PeerName> GetColloboratorPeerName()
+        {
+            //Console.WriteLine("GetColloboratorPeerName()");
+            return null;
+        }
+
+        #endregion
     }
 }

@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Net.PeerToPeer;
 
 namespace Chartful.Server
 {
@@ -12,36 +13,19 @@ namespace Chartful.Server
     [ServiceContract]
     public interface IService
     {
+        [OperationContract]
+        bool SignUp(string username, string password, string email);
 
         [OperationContract]
-        string GetData(int value);
+        bool SignIn(string username, string password);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        bool SignOut();
 
-        // TODO: ajoutez vos opérations de service ici
-    }
+        [OperationContract]
+        List<string> GetFileNameList();
 
-
-    // Utilisez un contrat de données comme indiqué dans l'exemple ci-après pour ajouter les types composites aux opérations de service.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        List<PeerName> GetColloboratorPeerName();
     }
 }

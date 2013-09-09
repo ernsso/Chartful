@@ -1,0 +1,7 @@
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful.Server\bin\Chartful.Server.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful.Server\bin\Chartful.Server.pdb
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful.Server\bin\MySql.Data.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful.Server\bin\MySql.Web.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful.Server\obj\Debug\Chartful.Server.csprojResolveAssemblyReference.cache
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful.Server\obj\Debug\Chartful.Server.dll
+C:\Users\Ernsso\Documents\GitHub\Chartful\Solution\Chartful.Server\obj\Debug\Chartful.Server.pdb
